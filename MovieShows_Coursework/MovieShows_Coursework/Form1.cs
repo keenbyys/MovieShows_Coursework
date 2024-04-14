@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MovieShows_Coursework
 {
-    public partial class Form1 : Form
+    public partial class FormJOMovie : Form
     {
-        public Form1()
+        public FormJOMovie()
         {
             InitializeComponent();
         }

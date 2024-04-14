@@ -1,0 +1,10 @@
+C:\Users\sjdro\source\repos\MovieShows_Coursework\MovieShows_Coursework\MovieShows_Coursework\bin\Debug\MovieShows_Coursework.exe.config
+C:\Users\sjdro\source\repos\MovieShows_Coursework\MovieShows_Coursework\MovieShows_Coursework\bin\Debug\MovieShows_Coursework.exe
+C:\Users\sjdro\source\repos\MovieShows_Coursework\MovieShows_Coursework\MovieShows_Coursework\bin\Debug\MovieShows_Coursework.pdb
+C:\Users\sjdro\source\repos\MovieShows_Coursework\MovieShows_Coursework\MovieShows_Coursework\obj\Debug\MovieShows_Coursework.csproj.AssemblyReference.cache
+C:\Users\sjdro\source\repos\MovieShows_Coursework\MovieShows_Coursework\MovieShows_Coursework\obj\Debug\MovieShows_Coursework.Properties.Resources.resources
+C:\Users\sjdro\source\repos\MovieShows_Coursework\MovieShows_Coursework\MovieShows_Coursework\obj\Debug\MovieShows_Coursework.csproj.GenerateResource.cache
+C:\Users\sjdro\source\repos\MovieShows_Coursework\MovieShows_Coursework\MovieShows_Coursework\obj\Debug\MovieShows_Coursework.csproj.CoreCompileInputs.cache
+C:\Users\sjdro\source\repos\MovieShows_Coursework\MovieShows_Coursework\MovieShows_Coursework\obj\Debug\MovieShows_Coursework.exe
+C:\Users\sjdro\source\repos\MovieShows_Coursework\MovieShows_Coursework\MovieShows_Coursework\obj\Debug\MovieShows_Coursework.pdb
+C:\Users\sjdro\source\repos\MovieShows_Coursework\MovieShows_Coursework\MovieShows_Coursework\obj\Debug\MovieShows_Coursework.FormJOMovie.resources
