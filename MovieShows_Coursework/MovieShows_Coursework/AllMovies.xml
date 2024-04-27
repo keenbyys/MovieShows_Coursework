@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+	<Cinema name ="EvilLight">
+		<Billboard name ="Silent Hill 2">
+			<Date>22.07.2024</Date>
+			<Genre>Horror</Genre>
+			<Start>9:30</Start>
+			<End>11:35</End>
+			<Duration>125</Duration> 
+		</Billboard>
+
+		<Billboard name ="Resident Evil: Apocalypse">
+			<Date>22.07.2024</Date>
+			<Genre>Action</Genre>
+			<Start>11:40</Start>
+			<End>13:30</End>
+			<Duration>110</Duration>
+		</Billboard>
+
+		<Billboard name ="Bayonetta">
+			<Date>22.07.2024</Date>
+			<Genre>Action</Genre>
+			<Start>13:35</Start>
+			<End>15:35</End>
+			<Duration>120</Duration>
+		</Billboard>
+
+		<Billboard name ="Silent Hill 3">
+			<Date>23.07.2024</Date>
+			<Genre>Horror</Genre>
+			<Start>10:40</Start>
+			<End>12:41</End>
+			<Duration>121</Duration>
+		</Billboard>
+
+		<Billboard name ="Alien Isolation 2">
+			<Date>23.07.2024</Date>
+			<Genre>Horror</Genre>
+			<Start>12:50</Start>
+			<End>14:52</End>
+			<Duration>122</Duration>
+		</Billboard>
+	</Cinema>
+
+	<Cinema name ="VibeJo">
+		<Billboard name ="The Last of Us. Part 3">
+			<Date>22.07.2024</Date>
+			<Genre>Drama</Genre>
+			<Start>12:00</Start>
+			<End>15:00</End>
+			<Duration>180</Duration>
+		</Billboard>
+
+		<Billboard name ="Resident Evil: Apocalypse">
+			<Date>22.07.2024</Date>
+			<Genre>Action</Genre>
+			<Start>15:05</Start>
+			<End>16:55</End>
+			<Duration>110</Duration>
+		</Billboard>
+
+		<Billboard name ="Hollow Knight 2">
+			<Date>22.07.2024</Date>
+			<Genre>Action</Genre>
+			<Start>17:00</Start>
+			<End>19:00</End>
+			<Duration>120</Duration>
+		</Billboard>
+
+		<Billboard name ="Hades">
+			<Date>23.07.2024</Date>
+			<Genre>Action</Genre>
+			<Start>18:40</Start>
+			<End>20:41</End>
+			<Duration>121</Duration>
+		</Billboard>
+
+		<Billboard name ="Hollow Knight 4">
+			<Date>23.07.2024</Date>
+			<Genre>Action</Genre>
+			<Start>20:50</Start>
+			<End>22:52</End>
+			<Duration>122</Duration>
+		</Billboard>
+	</Cinema>
+
+	<Cinema name ="RestlessDreams">
+		<Billboard name ="Life is Strange 4">
+			<Date>22.07.2024</Date>
+			<Genre>Drama</Genre>
+			<Start>14:40</Start>
+			<End>17:40</End>
+			<Duration>180</Duration>
+		</Billboard>
+
+		<Billboard name ="Violet Evergarden">
+			<Date>23.07.2024</Date>
+			<Genre>Drama</Genre>
+			<Start>9:40</Start>
+			<End>13:00</End>
+			<Duration>200</Duration>
+		</Billboard>
+
+		<Billboard name ="Night in the Woods">
+			<Date>23.07.2024</Date>
+			<Genre>Drama</Genre>
+			<Start>13:05</Start>
+			<End>16:05</End>
+			<Duration>180</Duration>
+		</Billboard>
+
+		<Billboard name ="Disco Elisium">
+			<Date>23.07.2024</Date>
+			<Genre>Drama</Genre>
+			<Start>16:10</Start>
+			<End>19:30</End>
+			<Duration>200</Duration>
+		</Billboard>
+
+		<Billboard name ="Night in the Woods 2">
+			<Date>23.07.2024</Date>
+			<Genre>Drama</Genre>
+			<Start>19:35</Start>
+			<End>22:20</End>
+			<Duration>165</Duration>
+		</Billboard>
+	</Cinema>
+</root>
