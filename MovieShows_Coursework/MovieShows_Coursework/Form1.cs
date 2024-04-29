@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace MovieShows_Coursework
 {
@@ -15,6 +16,48 @@ namespace MovieShows_Coursework
         public FormJOMovie()
         {
             InitializeComponent();
+            LoadDataFromXml();
+        }
+
+        public struct Billboard 
+        {
+            public string Cinema { get; set; }
+            public string Film { get; set; }
+            public string Genre { get; set; }
+            public string Date { get; set; }
+            public string Start { get; set; }
+            public string End { get; set; }   
+            public int Duration { get; set; }
+        }
+
+        // Load a data from Xml-file to struct
+        private void LoadDataFromXml()
+        {
+            List<Billboard> items = new List<Billboard>(); 
+            XmlDocument xmlDocAllMovies = new XmlDocument();
+            
+            string xmlFilePath = "C:\\Users\\sjdro\\source\\repos\\MovieShows_Coursework\\MovieShows_Coursework\\MovieShows_Coursework\\AllMovies.xml";
+            xmlDocAllMovies.Load(xmlFilePath);
+            
+            XmlNodeList itemNodes = xmlDocAllMovies.SelectNodes("//Billboard");
+
+            foreach (XmlNode node in xmlDocAllMovies.DocumentElement)
+            {
+                string nameCinema = node.Attributes[0].Value;
+                string nameFilm = string.Format(node["Cinema"].InnerText);
+                string date = string.Format(node["Date"].InnerText);
+                string genre = string.Format(node["Genre"].InnerText);
+                string startTime = string.Format(node["Start"].InnerText);
+                string endTime = string.Format(node["End"].InnerText);
+                int duration = Convert.ToInt32(node["Duration"].InnerText);
+
+                items.Add(new Billboard { Cinema = nameCinema, Film = nameFilm, Genre = genre, Date = date, Start = startTime, End = endTime });    
+            }
+        }
+
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+
         }
 
         //Close App
@@ -56,5 +99,7 @@ namespace MovieShows_Coursework
                 buttonSave.Enabled = false;
             }
         }
+
+
     }
 }

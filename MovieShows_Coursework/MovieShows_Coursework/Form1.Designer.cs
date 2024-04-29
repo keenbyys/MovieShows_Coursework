@@ -43,6 +43,7 @@
             this.textBoxNameCinema_Search = new System.Windows.Forms.TextBox();
             this.labelNameCinema_Search = new System.Windows.Forms.Label();
             this.panelSearch = new System.Windows.Forms.Panel();
+            this.dataGridViewMovieShows_Search = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonLoadUpcomingReleases = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
@@ -64,6 +65,8 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.groupBoxInputData = new System.Windows.Forms.GroupBox();
+            this.labelEnd = new System.Windows.Forms.Label();
+            this.textBoxEnd = new System.Windows.Forms.TextBox();
             this.labelDuration = new System.Windows.Forms.Label();
             this.labelBeginning = new System.Windows.Forms.Label();
             this.textBoxBeginning = new System.Windows.Forms.TextBox();
@@ -78,15 +81,20 @@
             this.labelGenre = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.dataGridViewMovieShows_Search = new System.Windows.Forms.DataGridView();
             this.checkBoxRoot = new System.Windows.Forms.CheckBox();
-            this.labelEnd = new System.Windows.Forms.Label();
-            this.textBoxEnd = new System.Windows.Forms.TextBox();
+            this.Film = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cinema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.End = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panelSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Search)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPageHome.SuspendLayout();
@@ -97,7 +105,6 @@
             this.groupBoxInputData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Search)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPageSearch
@@ -243,6 +250,16 @@
             this.panelSearch.Size = new System.Drawing.Size(574, 522);
             this.panelSearch.TabIndex = 13;
             // 
+            // dataGridViewMovieShows_Search
+            // 
+            this.dataGridViewMovieShows_Search.AllowUserToOrderColumns = true;
+            this.dataGridViewMovieShows_Search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMovieShows_Search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewMovieShows_Search.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewMovieShows_Search.Name = "dataGridViewMovieShows_Search";
+            this.dataGridViewMovieShows_Search.Size = new System.Drawing.Size(574, 522);
+            this.dataGridViewMovieShows_Search.TabIndex = 1;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.buttonLoadUpcomingReleases);
@@ -372,8 +389,17 @@
             // 
             // dataGridViewMovieShows_Home
             // 
+            this.dataGridViewMovieShows_Home.AllowUserToAddRows = false;
             this.dataGridViewMovieShows_Home.AllowUserToOrderColumns = true;
             this.dataGridViewMovieShows_Home.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMovieShows_Home.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Film,
+            this.Cinema,
+            this.Date,
+            this.Genre,
+            this.Start,
+            this.End,
+            this.Duration});
             this.dataGridViewMovieShows_Home.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewMovieShows_Home.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewMovieShows_Home.Name = "dataGridViewMovieShows_Home";
@@ -412,6 +438,7 @@
             this.buttonLoad.TabIndex = 4;
             this.buttonLoad.Text = "Load";
             this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // buttonSave
             // 
@@ -474,6 +501,23 @@
             this.groupBoxInputData.Size = new System.Drawing.Size(300, 264);
             this.groupBoxInputData.TabIndex = 9;
             this.groupBoxInputData.TabStop = false;
+            // 
+            // labelEnd
+            // 
+            this.labelEnd.Location = new System.Drawing.Point(6, 188);
+            this.labelEnd.Name = "labelEnd";
+            this.labelEnd.Size = new System.Drawing.Size(104, 28);
+            this.labelEnd.TabIndex = 13;
+            this.labelEnd.Text = "End:";
+            // 
+            // textBoxEnd
+            // 
+            this.textBoxEnd.Enabled = false;
+            this.textBoxEnd.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEnd.Location = new System.Drawing.Point(116, 187);
+            this.textBoxEnd.Name = "textBoxEnd";
+            this.textBoxEnd.Size = new System.Drawing.Size(174, 29);
+            this.textBoxEnd.TabIndex = 12;
             // 
             // labelDuration
             // 
@@ -605,16 +649,6 @@
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // dataGridViewMovieShows_Search
-            // 
-            this.dataGridViewMovieShows_Search.AllowUserToOrderColumns = true;
-            this.dataGridViewMovieShows_Search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMovieShows_Search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewMovieShows_Search.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewMovieShows_Search.Name = "dataGridViewMovieShows_Search";
-            this.dataGridViewMovieShows_Search.Size = new System.Drawing.Size(574, 522);
-            this.dataGridViewMovieShows_Search.TabIndex = 1;
-            // 
             // checkBoxRoot
             // 
             this.checkBoxRoot.AutoSize = true;
@@ -626,22 +660,40 @@
             this.checkBoxRoot.UseVisualStyleBackColor = true;
             this.checkBoxRoot.CheckedChanged += new System.EventHandler(this.checkBoxRoot_CheckedChanged);
             // 
-            // labelEnd
+            // Film
             // 
-            this.labelEnd.Location = new System.Drawing.Point(6, 188);
-            this.labelEnd.Name = "labelEnd";
-            this.labelEnd.Size = new System.Drawing.Size(104, 28);
-            this.labelEnd.TabIndex = 13;
-            this.labelEnd.Text = "End:";
+            this.Film.HeaderText = "Film";
+            this.Film.Name = "Film";
             // 
-            // textBoxEnd
+            // Cinema
             // 
-            this.textBoxEnd.Enabled = false;
-            this.textBoxEnd.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEnd.Location = new System.Drawing.Point(116, 187);
-            this.textBoxEnd.Name = "textBoxEnd";
-            this.textBoxEnd.Size = new System.Drawing.Size(174, 29);
-            this.textBoxEnd.TabIndex = 12;
+            this.Cinema.HeaderText = "Cinema";
+            this.Cinema.Name = "Cinema";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            // 
+            // Genre
+            // 
+            this.Genre.HeaderText = "Genre";
+            this.Genre.Name = "Genre";
+            // 
+            // Start
+            // 
+            this.Start.HeaderText = "Start";
+            this.Start.Name = "Start";
+            // 
+            // End
+            // 
+            this.End.HeaderText = "End";
+            this.End.Name = "End";
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.Name = "Duration";
             // 
             // FormJOMovie
             // 
@@ -665,6 +717,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panelSearch.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Search)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -677,7 +730,6 @@
             this.groupBoxInputData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Search)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -739,6 +791,13 @@
         private System.Windows.Forms.CheckBox checkBoxRoot;
         private System.Windows.Forms.Label labelEnd;
         private System.Windows.Forms.TextBox textBoxEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Film;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cinema;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Start;
+        private System.Windows.Forms.DataGridViewTextBoxColumn End;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
     }
 }
 
