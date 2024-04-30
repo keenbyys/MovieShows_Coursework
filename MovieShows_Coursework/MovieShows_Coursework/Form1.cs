@@ -201,7 +201,7 @@ namespace MovieShows_Coursework
             }
         }
 
-        private void TimePickerCustomFormat()
+        private void FormJOMovie_Load(object sender, EventArgs e)
         {
             dateTimePickerStart.Format = DateTimePickerFormat.Custom;
             dateTimePickerStart.CustomFormat = "HH:mm";
@@ -210,11 +210,7 @@ namespace MovieShows_Coursework
             dateTimePickerEnd.Format = DateTimePickerFormat.Custom;
             dateTimePickerEnd.CustomFormat = "HH:mm";
             dateTimePickerEnd.Value = DateTime.Now.Date;
-        }
 
-        private void FormJOMovie_Load(object sender, EventArgs e)
-        {
-            TimePickerCustomFormat();
             dataGridViewMovieShows_Home.RowTemplate.Height = 40;
         }
     }
