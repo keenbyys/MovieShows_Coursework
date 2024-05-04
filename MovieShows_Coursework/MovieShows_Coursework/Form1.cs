@@ -16,6 +16,7 @@ namespace MovieShows_Coursework
     public partial class FormJOMovie : Form
     {
         private string xmlFilePath = "C:\\Users\\sjdro\\source\\repos\\MovieShows_Coursework\\MovieShows_Coursework\\MovieShows_Coursework\\AllMovies.xml";
+        
         public FormJOMovie()
         {
             InitializeComponent();
@@ -57,7 +58,10 @@ namespace MovieShows_Coursework
                 items.Add(new Billboard { Cinema = nameCinema, Film = nameFilm, Genre = genre, Date = date, Start = startTime, End = endTime });    
             }
         }
-
+        //
+        // ADD NEW DATA
+        // BUTTON
+        //
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             if (textBoxNameFilm.Text == "" || textBoxNameCinema_Home.Text == "" || comboBoxGenreFilm.Text == ""
@@ -76,7 +80,31 @@ namespace MovieShows_Coursework
                 dataGridViewMovieShows_Home.Rows[n].Cells[6].Value = numericUpDownDuration.Text;
             }
         }
-
+        //
+        // EDIT DATA (A ROW)
+        // BUTTON
+        // 
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewMovieShows_Home.SelectedRows.Count > 0)
+            {
+                int n = dataGridViewMovieShows_Home.SelectedRows[0].Index;
+                dataGridViewMovieShows_Home.Rows[n].Cells[0].Value = textBoxNameFilm.Text;
+                dataGridViewMovieShows_Home.Rows[n].Cells[1].Value = textBoxNameCinema_Home.Text;
+                dataGridViewMovieShows_Home.Rows[n].Cells[2].Value = comboBoxGenreFilm.Text;
+                dataGridViewMovieShows_Home.Rows[n].Cells[3].Value = dateTimePickerDateShow_Home.Text;
+                dataGridViewMovieShows_Home.Rows[n].Cells[4].Value = dateTimePickerStart.Text;
+                dataGridViewMovieShows_Home.Rows[n].Cells[5].Value = dateTimePickerEnd.Text;
+                dataGridViewMovieShows_Home.Rows[n].Cells[6].Value = numericUpDownDuration.Text;
+            } else
+            {
+                MessageBox.Show("Error!");
+            }
+        }
+        //
+        // DELETE DATA (A ROW)
+        // BUTTON
+        // 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             if (dataGridViewMovieShows_Home.SelectedRows.Count > 0)
@@ -88,14 +116,17 @@ namespace MovieShows_Coursework
                 MessageBox.Show("Error!");
             }
         }
-
-        private void buttonSave_Click(object sender, EventArgs e)
+        //
+        // ADD DATA TO XML-FILES
+        // PROCCES
+        //
+        private void SaveToXML(DataGridView dataGridViewMovieShow_Home, string xmlFileName)
         {
             try
             {
                 DataSet dataSet = new DataSet();
                 DataTable dataTable = new DataTable();
-                dataTable.TableName = "Movie Show";
+                dataTable.TableName = "Billboard";
                 dataTable.Columns.Add("Film");
                 dataTable.Columns.Add("Cinema");
                 dataTable.Columns.Add("Genre");
@@ -108,7 +139,7 @@ namespace MovieShows_Coursework
 
                 foreach (DataGridViewRow r in dataGridViewMovieShows_Home.Rows)
                 {
-                    DataRow row = dataSet.Tables["Movie Show"].NewRow();
+                    DataRow row = dataSet.Tables["Billboard"].NewRow();
                     row["Film"] = r.Cells[0].Value;
                     row["Cinema"] = r.Cells[1].Value;
                     row["Genre"] = r.Cells[2].Value;
@@ -117,9 +148,9 @@ namespace MovieShows_Coursework
                     row["End"] = r.Cells[5].Value;
                     row["Duration"] = r.Cells[6].Value;
 
-                    dataSet.Tables["Movie Show"].Rows.Add(row);
+                    dataSet.Tables["Billboard"].Rows.Add(row);
                 }
-                dataSet.WriteXml(xmlFilePath);
+                dataSet.WriteXml(xmlFileName);
                 MessageBox.Show("XML-file is saved!", "Done!");
             }
             catch
@@ -127,47 +158,91 @@ namespace MovieShows_Coursework
                 MessageBox.Show("Could not save XML-file", "Error!");
             }
         }
+        //
+        // SAVE DATA TO XML-FILES
+        // BUTTON
+        //
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "XML-file (*.xml)|*.xml";
+            saveFileDialog.Title = "Save XML-file";
+            saveFileDialog.ShowDialog();
 
+            if (saveFileDialog.FileName != "")
+            {
+                SaveToXML(dataGridViewMovieShows_Home, saveFileDialog.FileName);
+            }
+        }
+        //
+        // LOAD DATA FROM XML-FILES
+        // BUTTON
+        //
         private void buttonLoad_Click(object sender, EventArgs e)
         {
-            //string xmlFilePath = "C:\\Users\\sjdro\\source\\repos\\MovieShows_Coursework\\MovieShows_Coursework\\MovieShows_Coursework\\AllMovies.xml";
-            if (dataGridViewMovieShows_Home.SelectedRows.Count > 0)
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "XML-file (*.xml)|*.xml|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Please, clear the field before loading new XML-file!", "Error!");
-            }
-            else
-            {
-                if (File.Exists(xmlFilePath))
+                if (dataGridViewMovieShows_Home.SelectedRows.Count > 0)
                 {
-                    DataSet dataSet = new DataSet();
-                    dataSet.ReadXml(xmlFilePath);
-                 
-                    foreach (DataRow item in dataSet.Tables[0].Rows)
-                    {
-                        int n = dataGridViewMovieShows_Home.Rows.Add();
-                        dataGridViewMovieShows_Home.Rows[n].Cells[0].Value = item["Film"];
-                        dataGridViewMovieShows_Home.Rows[n].Cells[1].Value = item["Cinema"];
-                        dataGridViewMovieShows_Home.Rows[n].Cells[2].Value = item["Date"];
-                        dataGridViewMovieShows_Home.Rows[n].Cells[3].Value = item["Genre"];
-                        dataGridViewMovieShows_Home.Rows[n].Cells[4].Value = item["Start"];
-                        dataGridViewMovieShows_Home.Rows[n].Cells[5].Value = item["End"];
-                        dataGridViewMovieShows_Home.Rows[n].Cells[6].Value = item["Duration"];
-                    }
+                    MessageBox.Show("Please, clear the field before loading new XML-file!", "Error!");
                 }
                 else
                 {
-                    MessageBox.Show("XML-file not found!", "Error!");
+                    if (File.Exists(openFileDialog.FileName))
+                    {
+                        DataSet dataSet = new DataSet();
+                        dataSet.ReadXml(openFileDialog.FileName);
+
+                        foreach (DataRow item in dataSet.Tables[0].Rows)
+                        {
+                            int n = dataGridViewMovieShows_Home.Rows.Add();
+                            dataGridViewMovieShows_Home.Rows[n].Cells[0].Value = item["Film"];
+                            dataGridViewMovieShows_Home.Rows[n].Cells[1].Value = item["Cinema"];
+                            dataGridViewMovieShows_Home.Rows[n].Cells[2].Value = item["Date"];
+                            dataGridViewMovieShows_Home.Rows[n].Cells[3].Value = item["Genre"];
+                            dataGridViewMovieShows_Home.Rows[n].Cells[4].Value = item["Start"];
+                            dataGridViewMovieShows_Home.Rows[n].Cells[5].Value = item["End"];
+                            dataGridViewMovieShows_Home.Rows[n].Cells[6].Value = item["Duration"];
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("XML-file not found!", "Error!");
+                    }
                 }
             }
         }
-
-        //Close App
+        //
+        // CLEAR ALL DATA OF TABLE
+        // BUTTON
+        //
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewMovieShows_Home.SelectedRows.Count > 0)
+            {
+                dataGridViewMovieShows_Home.Rows.Clear();
+            } else
+            {
+                MessageBox.Show("Table is empty!", "Error!");
+            }
+        }
+        //
+        // CLOSE APP
+        // BUTTON
+        //
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        //Enable more function for admin
+        //
+        // ADMIN RIGHT
+        // PROCCES
+        //
         private void checkBoxRoot_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxRoot.Checked)
@@ -180,7 +255,6 @@ namespace MovieShows_Coursework
                 dateTimePickerEnd.Enabled = true;
                 numericUpDownDuration.Enabled = true;
                 buttonAdd.Enabled = true;
-                buttonClear.Enabled = true;
                 buttonDelete.Enabled = true;
                 buttonEdit.Enabled = true;
                 buttonSave.Enabled = true;
@@ -194,13 +268,14 @@ namespace MovieShows_Coursework
                 dateTimePickerEnd.Enabled = false;
                 numericUpDownDuration.Enabled = false;
                 buttonAdd.Enabled = false;
-                buttonClear.Enabled = false;
                 buttonDelete.Enabled = false;
                 buttonEdit.Enabled = false;
                 buttonSave.Enabled = false;
             }
         }
-
+        //
+        // LOAD FORM
+        //
         private void FormJOMovie_Load(object sender, EventArgs e)
         {
             dateTimePickerStart.Format = DateTimePickerFormat.Custom;
@@ -213,5 +288,7 @@ namespace MovieShows_Coursework
 
             dataGridViewMovieShows_Home.RowTemplate.Height = 40;
         }
+
+        
     }
 }

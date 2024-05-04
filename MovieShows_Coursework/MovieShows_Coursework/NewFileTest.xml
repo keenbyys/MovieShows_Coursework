@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Billboard>
+    <Film>LIS 3</Film>
+    <Cinema>Kino</Cinema>
+    <Genre>Horror</Genre>
+    <Date>04.05.2024</Date>
+    <Start>11:00</Start>
+    <End>13:00</End>
+    <Duration>120</Duration>
+  </Billboard>
+</NewDataSet>

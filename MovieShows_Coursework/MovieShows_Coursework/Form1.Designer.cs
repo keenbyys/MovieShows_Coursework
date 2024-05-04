@@ -57,6 +57,13 @@
             this.panelHome = new System.Windows.Forms.Panel();
             this.panelDataMovieShows = new System.Windows.Forms.Panel();
             this.dataGridViewMovieShows_Home = new System.Windows.Forms.DataGridView();
+            this.Film = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cinema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.End = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
@@ -65,6 +72,8 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.groupBoxInputData = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.labelEnd = new System.Windows.Forms.Label();
             this.labelDuration = new System.Windows.Forms.Label();
             this.labelBeginning = new System.Windows.Forms.Label();
@@ -80,15 +89,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.buttonExit = new System.Windows.Forms.Button();
             this.checkBoxRoot = new System.Windows.Forms.CheckBox();
-            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
-            this.Film = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cinema = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.End = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -406,6 +406,55 @@
             this.dataGridViewMovieShows_Home.Size = new System.Drawing.Size(574, 522);
             this.dataGridViewMovieShows_Home.TabIndex = 0;
             // 
+            // Film
+            // 
+            this.Film.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Film.HeaderText = "Film";
+            this.Film.Name = "Film";
+            this.Film.Width = 72;
+            // 
+            // Cinema
+            // 
+            this.Cinema.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Cinema.HeaderText = "Cinema";
+            this.Cinema.Name = "Cinema";
+            this.Cinema.Width = 101;
+            // 
+            // Genre
+            // 
+            this.Genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Genre.HeaderText = "Genre";
+            this.Genre.Name = "Genre";
+            this.Genre.Width = 88;
+            // 
+            // Date
+            // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.Width = 76;
+            // 
+            // Start
+            // 
+            this.Start.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Start.HeaderText = "Start";
+            this.Start.Name = "Start";
+            this.Start.Width = 76;
+            // 
+            // End
+            // 
+            this.End.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.End.HeaderText = "End";
+            this.End.Name = "End";
+            this.End.Width = 69;
+            // 
+            // Duration
+            // 
+            this.Duration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Duration.HeaderText = "Duration";
+            this.Duration.Name = "Duration";
+            this.Duration.Width = 111;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.buttonClear);
@@ -422,13 +471,13 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Enabled = false;
             this.buttonClear.Location = new System.Drawing.Point(11, 225);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(279, 34);
             this.buttonClear.TabIndex = 5;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonLoad
             // 
@@ -471,6 +520,7 @@
             this.buttonEdit.TabIndex = 1;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonAdd
             // 
@@ -504,6 +554,30 @@
             this.groupBoxInputData.Size = new System.Drawing.Size(300, 231);
             this.groupBoxInputData.TabIndex = 9;
             this.groupBoxInputData.TabStop = false;
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.CalendarFont = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerEnd.Enabled = false;
+            this.dateTimePickerEnd.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerEnd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(210, 151);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(80, 29);
+            this.dateTimePickerEnd.TabIndex = 15;
+            // 
+            // dateTimePickerStart
+            // 
+            this.dateTimePickerStart.CalendarFont = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerStart.Enabled = false;
+            this.dateTimePickerStart.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePickerStart.Location = new System.Drawing.Point(65, 151);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(84, 29);
+            this.dateTimePickerStart.TabIndex = 14;
             // 
             // labelEnd
             // 
@@ -646,79 +720,6 @@
             this.checkBoxRoot.Text = "Administrator Rights";
             this.checkBoxRoot.UseVisualStyleBackColor = true;
             this.checkBoxRoot.CheckedChanged += new System.EventHandler(this.checkBoxRoot_CheckedChanged);
-            // 
-            // dateTimePickerStart
-            // 
-            this.dateTimePickerStart.CalendarFont = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerStart.Enabled = false;
-            this.dateTimePickerStart.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePickerStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerStart.Location = new System.Drawing.Point(65, 151);
-            this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(84, 29);
-            this.dateTimePickerStart.TabIndex = 14;
-            // 
-            // dateTimePickerEnd
-            // 
-            this.dateTimePickerEnd.CalendarFont = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerEnd.Enabled = false;
-            this.dateTimePickerEnd.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePickerEnd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(210, 151);
-            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(80, 29);
-            this.dateTimePickerEnd.TabIndex = 15;
-            // 
-            // Film
-            // 
-            this.Film.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Film.HeaderText = "Film";
-            this.Film.Name = "Film";
-            this.Film.Width = 72;
-            // 
-            // Cinema
-            // 
-            this.Cinema.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Cinema.HeaderText = "Cinema";
-            this.Cinema.Name = "Cinema";
-            this.Cinema.Width = 101;
-            // 
-            // Genre
-            // 
-            this.Genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Genre.HeaderText = "Genre";
-            this.Genre.Name = "Genre";
-            this.Genre.Width = 88;
-            // 
-            // Date
-            // 
-            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.Width = 76;
-            // 
-            // Start
-            // 
-            this.Start.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Start.HeaderText = "Start";
-            this.Start.Name = "Start";
-            this.Start.Width = 76;
-            // 
-            // End
-            // 
-            this.End.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.End.HeaderText = "End";
-            this.End.Name = "End";
-            this.End.Width = 69;
-            // 
-            // Duration
-            // 
-            this.Duration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Duration.HeaderText = "Duration";
-            this.Duration.Name = "Duration";
-            this.Duration.Width = 111;
             // 
             // FormJOMovie
             // 
