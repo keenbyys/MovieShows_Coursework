@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 using System.IO;
 using System.Runtime.InteropServices;
 
@@ -17,45 +18,45 @@ namespace MovieShows_Coursework
     {
         private string xmlFilePath = "C:\\Users\\sjdro\\source\\repos\\MovieShows_Coursework\\MovieShows_Coursework\\MovieShows_Coursework\\AllMovies.xml";
         
+        List<Billboard> movie = new List<Billboard>();
+
         public FormJOMovie()
         {
             InitializeComponent();
-            LoadDataFromXml();
+            
         }
 
-        public struct Billboard 
+        public struct Billboard
         {
-            public string Cinema { get; set; }
             public string Film { get; set; }
+            public string Cinema { get; set; }
             public string Genre { get; set; }
             public string Date { get; set; }
             public string Start { get; set; }
-            public string End { get; set; }   
+            public string End { get; set; }
             public int Duration { get; set; }
         }
 
         // Load a data from Xml-file to struct
         private void LoadDataFromXml()
         {
-            List<Billboard> items = new List<Billboard>(); 
             XmlDocument xmlDocAllMovies = new XmlDocument();
-            
-            //string xmlFilePath = "C:\\Users\\sjdro\\source\\repos\\MovieShows_Coursework\\MovieShows_Coursework\\MovieShows_Coursework\\AllMovies.xml";
+
             xmlDocAllMovies.Load(xmlFilePath);
-            
+
             XmlNodeList itemNodes = xmlDocAllMovies.SelectNodes("//Billboard");
 
             foreach (XmlNode node in xmlDocAllMovies.DocumentElement)
             {
-                string nameCinema = string.Format(node["Film"].InnerText);
-                string nameFilm = string.Format(node["Cinema"].InnerText);
+                string nameCinema = string.Format(node["Cinema"].InnerText);
+                string nameFilm = string.Format(node["Film"].InnerText);
                 string date = string.Format(node["Date"].InnerText);
                 string genre = string.Format(node["Genre"].InnerText);
                 string startTime = string.Format(node["Start"].InnerText);
                 string endTime = string.Format(node["End"].InnerText);
                 int duration = Convert.ToInt32(node["Duration"].InnerText);
 
-                items.Add(new Billboard { Cinema = nameCinema, Film = nameFilm, Genre = genre, Date = date, Start = startTime, End = endTime });    
+                movie.Add(new Billboard { Cinema = nameCinema, Film = nameFilm, Genre = genre, Date = date, Start = startTime, End = endTime, Duration = duration });
             }
         }
         //
@@ -68,7 +69,8 @@ namespace MovieShows_Coursework
                 || dateTimePickerStart.Text == "00:00" || dateTimePickerEnd.Text == "00:00" || numericUpDownDuration.Value == 0)
             {
                 MessageBox.Show("Error!");
-            } else
+            }
+            else
             {
                 int n = dataGridViewMovieShows_Home.Rows.Add();
                 dataGridViewMovieShows_Home.Rows[n].Cells[0].Value = textBoxNameFilm.Text;
@@ -96,7 +98,8 @@ namespace MovieShows_Coursework
                 dataGridViewMovieShows_Home.Rows[n].Cells[4].Value = dateTimePickerStart.Text;
                 dataGridViewMovieShows_Home.Rows[n].Cells[5].Value = dateTimePickerEnd.Text;
                 dataGridViewMovieShows_Home.Rows[n].Cells[6].Value = numericUpDownDuration.Text;
-            } else
+            }
+            else
             {
                 MessageBox.Show("Error!");
             }
@@ -142,8 +145,8 @@ namespace MovieShows_Coursework
                     DataRow row = dataSet.Tables["Billboard"].NewRow();
                     row["Film"] = r.Cells[0].Value;
                     row["Cinema"] = r.Cells[1].Value;
-                    row["Genre"] = r.Cells[2].Value;
-                    row["Date"] = r.Cells[3].Value;
+                    row["Date"] = r.Cells[2].Value;
+                    row["Genre"] = r.Cells[3].Value;
                     row["Start"] = r.Cells[4].Value;
                     row["End"] = r.Cells[5].Value;
                     row["Duration"] = r.Cells[6].Value;
@@ -226,7 +229,8 @@ namespace MovieShows_Coursework
             if (dataGridViewMovieShows_Home.SelectedRows.Count > 0)
             {
                 dataGridViewMovieShows_Home.Rows.Clear();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Table is empty!", "Error!");
             }
@@ -258,7 +262,8 @@ namespace MovieShows_Coursework
                 buttonDelete.Enabled = true;
                 buttonEdit.Enabled = true;
                 buttonSave.Enabled = true;
-            } else
+            }
+            else
             {
                 textBoxNameCinema_Home.Enabled = false;
                 textBoxNameFilm.Enabled = false;
@@ -274,6 +279,38 @@ namespace MovieShows_Coursework
             }
         }
         //
+        // SELECTION SORT
+        //
+        private void SelectionSortMovie(List<Billboard> billboard)
+        {
+            for (int i = 0; i < billboard.Count - 1; i++)
+            {
+                int minValue = i;
+                for (int j = i + 1; j < billboard.Count; j++)
+                {
+                    if (billboard[i].Duration < billboard[minValue].Duration)
+                    {
+                        minValue = j;
+                    }
+                }
+
+                Billboard tempValue = billboard[i];
+                billboard[i] = billboard[minValue];
+                billboard[minValue] = tempValue;
+            }
+        }
+        //
+        // DISPLAY DATA TO DATAGRID
+        //
+        private void DisplayToDataDrid(List<Billboard> billboard)
+        {
+            dataGridViewMovieShows_Search.DataSource = billboard; 
+        }
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            DisplayToDataDrid(movie);
+        }
+        //
         // LOAD FORM
         //
         private void FormJOMovie_Load(object sender, EventArgs e)
@@ -287,8 +324,9 @@ namespace MovieShows_Coursework
             dateTimePickerEnd.Value = DateTime.Now.Date;
 
             dataGridViewMovieShows_Home.RowTemplate.Height = 40;
-        }
 
-        
+            LoadDataFromXml();
+            SelectionSortMovie(movie);
+        }
     }
 }

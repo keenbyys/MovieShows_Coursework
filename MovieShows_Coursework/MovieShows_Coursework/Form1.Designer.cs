@@ -288,6 +288,7 @@
             this.buttonSearch.TabIndex = 5;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // groupBox3
             // 
@@ -605,7 +606,7 @@
             // 
             // labelNameCinema_Home
             // 
-            this.labelNameCinema_Home.Location = new System.Drawing.Point(6, 25);
+            this.labelNameCinema_Home.Location = new System.Drawing.Point(6, 61);
             this.labelNameCinema_Home.Name = "labelNameCinema_Home";
             this.labelNameCinema_Home.Size = new System.Drawing.Size(133, 28);
             this.labelNameCinema_Home.TabIndex = 0;
@@ -623,7 +624,7 @@
             // 
             this.textBoxNameCinema_Home.Enabled = false;
             this.textBoxNameCinema_Home.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxNameCinema_Home.Location = new System.Drawing.Point(145, 24);
+            this.textBoxNameCinema_Home.Location = new System.Drawing.Point(145, 60);
             this.textBoxNameCinema_Home.Name = "textBoxNameCinema_Home";
             this.textBoxNameCinema_Home.Size = new System.Drawing.Size(145, 29);
             this.textBoxNameCinema_Home.TabIndex = 1;
@@ -640,7 +641,7 @@
             // 
             // labelNameFilm
             // 
-            this.labelNameFilm.Location = new System.Drawing.Point(6, 59);
+            this.labelNameFilm.Location = new System.Drawing.Point(6, 26);
             this.labelNameFilm.Name = "labelNameFilm";
             this.labelNameFilm.Size = new System.Drawing.Size(104, 28);
             this.labelNameFilm.TabIndex = 2;
@@ -664,7 +665,7 @@
             // 
             this.textBoxNameFilm.Enabled = false;
             this.textBoxNameFilm.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxNameFilm.Location = new System.Drawing.Point(116, 59);
+            this.textBoxNameFilm.Location = new System.Drawing.Point(116, 26);
             this.textBoxNameFilm.Name = "textBoxNameFilm";
             this.textBoxNameFilm.Size = new System.Drawing.Size(174, 29);
             this.textBoxNameFilm.TabIndex = 3;
