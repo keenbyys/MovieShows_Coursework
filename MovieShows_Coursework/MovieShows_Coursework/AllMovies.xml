@@ -1,10 +1,12 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
   <Billboard>
+	<Count>1</Count>
     <Film>Life is Strange 4</Film>
     <Cinema>RestlessDreams</Cinema>
     <Genre>Drama</Genre>
     <Date>22.07.2024</Date>
+	<Day>Monday</Day>
     <Start>14:40</Start>
     <End>17:40</End>
     <Duration>180</Duration>

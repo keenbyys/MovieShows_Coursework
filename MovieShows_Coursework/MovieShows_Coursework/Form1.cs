@@ -373,9 +373,9 @@ namespace MovieShows_Coursework
         {
             SelectionSortMovie();
             if (radioButtonEndSessions.Checked == true)
-            {
                 DisplayAllEndSessions();
-            }
+            if (radioButtonSessionsWeeknd.Checked == true)
+                DisplayWeekndSessions();
         }
         //
         // display all ends sessions
@@ -402,8 +402,11 @@ namespace MovieShows_Coursework
         //
         // weekend session
         //
-        private void DisplayWeekendSessions()
+        private void DisplayWeekndSessions()
         {
+            DataSet billboard = new DataSet();
+            billboard.ReadXml(xmlFilePath);
+
 
         }
         //

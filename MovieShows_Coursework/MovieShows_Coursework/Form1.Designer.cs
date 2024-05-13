@@ -51,7 +51,7 @@
             this.radioButtonUpcoming = new System.Windows.Forms.RadioButton();
             this.radioButtonFirstSessions = new System.Windows.Forms.RadioButton();
             this.radioButtonAmountAndAverage = new System.Windows.Forms.RadioButton();
-            this.radioButtonSessionsWeekend = new System.Windows.Forms.RadioButton();
+            this.radioButtonSessionsWeeknd = new System.Windows.Forms.RadioButton();
             this.radioButtonEndSessions = new System.Windows.Forms.RadioButton();
             this.tabPageHome = new System.Windows.Forms.TabPage();
             this.panelHome = new System.Windows.Forms.Panel();
@@ -299,7 +299,7 @@
             this.groupBox3.Controls.Add(this.radioButtonUpcoming);
             this.groupBox3.Controls.Add(this.radioButtonFirstSessions);
             this.groupBox3.Controls.Add(this.radioButtonAmountAndAverage);
-            this.groupBox3.Controls.Add(this.radioButtonSessionsWeekend);
+            this.groupBox3.Controls.Add(this.radioButtonSessionsWeeknd);
             this.groupBox3.Controls.Add(this.radioButtonEndSessions);
             this.groupBox3.Location = new System.Drawing.Point(13, 3);
             this.groupBox3.Name = "groupBox3";
@@ -342,16 +342,16 @@
             this.radioButtonAmountAndAverage.UseVisualStyleBackColor = true;
             this.radioButtonAmountAndAverage.CheckedChanged += new System.EventHandler(this.radioButtonAmountAndAverage_CheckedChanged);
             // 
-            // radioButtonSessionsWeekend
+            // radioButtonSessionsWeeknd
             // 
-            this.radioButtonSessionsWeekend.AutoSize = true;
-            this.radioButtonSessionsWeekend.Location = new System.Drawing.Point(11, 57);
-            this.radioButtonSessionsWeekend.Name = "radioButtonSessionsWeekend";
-            this.radioButtonSessionsWeekend.Size = new System.Drawing.Size(220, 29);
-            this.radioButtonSessionsWeekend.TabIndex = 10;
-            this.radioButtonSessionsWeekend.TabStop = true;
-            this.radioButtonSessionsWeekend.Text = "Sessions on weekends.";
-            this.radioButtonSessionsWeekend.UseVisualStyleBackColor = true;
+            this.radioButtonSessionsWeeknd.AutoSize = true;
+            this.radioButtonSessionsWeeknd.Location = new System.Drawing.Point(11, 57);
+            this.radioButtonSessionsWeeknd.Name = "radioButtonSessionsWeeknd";
+            this.radioButtonSessionsWeeknd.Size = new System.Drawing.Size(210, 29);
+            this.radioButtonSessionsWeeknd.TabIndex = 10;
+            this.radioButtonSessionsWeeknd.TabStop = true;
+            this.radioButtonSessionsWeeknd.Text = "Sessions on weeknds.";
+            this.radioButtonSessionsWeeknd.UseVisualStyleBackColor = true;
             // 
             // radioButtonEndSessions
             // 
@@ -816,7 +816,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerDateShow_Home;
         private System.Windows.Forms.Label labelGenre;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.RadioButton radioButtonSessionsWeekend;
+        private System.Windows.Forms.RadioButton radioButtonSessionsWeeknd;
         private System.Windows.Forms.RadioButton radioButtonAmountAndAverage;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton radioButtonFirstSessions;
