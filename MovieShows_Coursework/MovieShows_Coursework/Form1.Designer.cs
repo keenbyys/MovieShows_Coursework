@@ -65,7 +65,7 @@
             this.End = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonClear_Home = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -89,6 +89,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.buttonExit = new System.Windows.Forms.Button();
             this.checkBoxRoot = new System.Windows.Forms.CheckBox();
+            this.buttonClear_Search = new System.Windows.Forms.Button();
             this.tabPageSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -263,11 +264,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonClear_Search);
             this.groupBox2.Controls.Add(this.buttonLoadUpcomingReleases);
             this.groupBox2.Controls.Add(this.buttonSearch);
-            this.groupBox2.Location = new System.Drawing.Point(13, 414);
+            this.groupBox2.Location = new System.Drawing.Point(13, 387);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(300, 124);
+            this.groupBox2.Size = new System.Drawing.Size(300, 151);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             // 
@@ -280,6 +282,7 @@
             this.buttonLoadUpcomingReleases.TabIndex = 6;
             this.buttonLoadUpcomingReleases.Text = "Load upcoming releases";
             this.buttonLoadUpcomingReleases.UseVisualStyleBackColor = true;
+            this.buttonLoadUpcomingReleases.Click += new System.EventHandler(this.buttonLoadUpcomingReleases_Click);
             // 
             // buttonSearch
             // 
@@ -314,6 +317,7 @@
             this.radioButtonUpcoming.TabStop = true;
             this.radioButtonUpcoming.Text = "Upcoming releases.";
             this.radioButtonUpcoming.UseVisualStyleBackColor = true;
+            this.radioButtonUpcoming.CheckedChanged += new System.EventHandler(this.radioButtonUpcoming_CheckedChanged);
             // 
             // radioButtonFirstSessions
             // 
@@ -408,6 +412,7 @@
             this.dataGridViewMovieShows_Home.Name = "dataGridViewMovieShows_Home";
             this.dataGridViewMovieShows_Home.Size = new System.Drawing.Size(574, 522);
             this.dataGridViewMovieShows_Home.TabIndex = 0;
+            // 
             // Film
             // 
             this.Film.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -459,7 +464,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.buttonClear);
+            this.groupBox1.Controls.Add(this.buttonClear_Home);
             this.groupBox1.Controls.Add(this.buttonLoad);
             this.groupBox1.Controls.Add(this.buttonSave);
             this.groupBox1.Controls.Add(this.buttonDelete);
@@ -471,15 +476,15 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
-            // buttonClear
+            // buttonClear_Home
             // 
-            this.buttonClear.Location = new System.Drawing.Point(11, 225);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(279, 34);
-            this.buttonClear.TabIndex = 5;
-            this.buttonClear.Text = "Clear";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.buttonClear_Home.Location = new System.Drawing.Point(11, 225);
+            this.buttonClear_Home.Name = "buttonClear_Home";
+            this.buttonClear_Home.Size = new System.Drawing.Size(279, 34);
+            this.buttonClear_Home.TabIndex = 5;
+            this.buttonClear_Home.Text = "Clear";
+            this.buttonClear_Home.UseVisualStyleBackColor = true;
+            this.buttonClear_Home.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonLoad
             // 
@@ -723,6 +728,16 @@
             this.checkBoxRoot.UseVisualStyleBackColor = true;
             this.checkBoxRoot.CheckedChanged += new System.EventHandler(this.checkBoxRoot_CheckedChanged);
             // 
+            // buttonClear_Search
+            // 
+            this.buttonClear_Search.Location = new System.Drawing.Point(11, 109);
+            this.buttonClear_Search.Name = "buttonClear_Search";
+            this.buttonClear_Search.Size = new System.Drawing.Size(279, 34);
+            this.buttonClear_Search.TabIndex = 15;
+            this.buttonClear_Search.Text = "Clear";
+            this.buttonClear_Search.UseVisualStyleBackColor = true;
+            this.buttonClear_Search.Click += new System.EventHandler(this.buttonClear_Search_Click);
+            // 
             // FormJOMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -782,7 +797,7 @@
         private System.Windows.Forms.Panel panelDataMovieShows;
         private System.Windows.Forms.DataGridView dataGridViewMovieShows_Home;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonClear_Home;
         private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonDelete;
@@ -827,6 +842,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Start;
         private System.Windows.Forms.DataGridViewTextBoxColumn End;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
+        private System.Windows.Forms.Button buttonClear_Search;
     }
 }
 
