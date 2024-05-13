@@ -3,8 +3,8 @@
   <Billboard>
     <Film>Life is Strange 4</Film>
     <Cinema>RestlessDreams</Cinema>
-    <Genre>22.07.2024</Genre>
-    <Date>Drama</Date>
+    <Genre>Drama</Genre>
+    <Date>22.07.2024</Date>
     <Start>14:40</Start>
     <End>17:40</End>
     <Duration>180</Duration>
@@ -12,8 +12,8 @@
   <Billboard>
     <Film>Bayonetta</Film>
     <Cinema>EvilLight</Cinema>
-    <Genre>22.07.2024</Genre>
-    <Date>Action</Date>
+    <Genre>Action</Genre>
+    <Date>22.07.2024</Date>
     <Start>13:35</Start>
     <End>15:35</End>
     <Duration>120</Duration>
@@ -21,8 +21,8 @@
   <Billboard>
     <Film>Silent Hill 2</Film>
     <Cinema>EvilLight</Cinema>
-    <Genre>22.07.2024</Genre>
-    <Date>Horror</Date>
+    <Genre>Horror</Genre>
+    <Date>22.07.2024</Date>
     <Start>09:30</Start>
     <End>11:35</End>
     <Duration>125</Duration>
@@ -30,8 +30,8 @@
   <Billboard>
     <Film>Hollow Knight 2</Film>
     <Cinema>VibeJo</Cinema>
-    <Genre>22.07.2024</Genre>
-    <Date>Action</Date>
+    <Genre>Action</Genre>
+    <Date>22.07.2024</Date>
     <Start>17:00</Start>
     <End>19:00</End>
     <Duration>120</Duration>
@@ -39,8 +39,8 @@
   <Billboard>
     <Film>The Last of Us. Part 3</Film>
     <Cinema>VibeJo</Cinema>
-    <Genre>22.07.2024</Genre>
-    <Date>Drama</Date>
+    <Genre>Drama</Genre>
+    <Date>22.07.2024</Date>
     <Start>12:00</Start>
     <End>15:00</End>
     <Duration>180</Duration>
@@ -48,8 +48,8 @@
   <Billboard>
     <Film>Resident Evil: Apocalypse</Film>
     <Cinema>EvilLight</Cinema>
-    <Genre>22.07.2024</Genre>
-    <Date>Action</Date>
+    <Genre>Action</Genre>
+    <Date>22.07.2024</Date>
     <Start>11:40</Start>
     <End>13:30</End>
     <Duration>110</Duration>
@@ -57,8 +57,8 @@
   <Billboard>
     <Film>Night in the Woods 2</Film>
     <Cinema>RestlessDreams</Cinema>
-    <Genre>23.07.2024</Genre>
-    <Date>Drama</Date>
+    <Genre>Drama</Genre>
+    <Date>23.07.2024</Date>
     <Start>19:35</Start>
     <End>22:20</End>
     <Duration>165</Duration>
@@ -66,8 +66,8 @@
   <Billboard>
     <Film>Hades</Film>
     <Cinema>VibeJo</Cinema>
-    <Genre>23.07.2024</Genre>
-    <Date>Action</Date>
+    <Genre>Action</Genre>
+    <Date>23.07.2024</Date>
     <Start>18:40</Start>
     <End>20:41</End>
     <Duration>121</Duration>
@@ -75,8 +75,8 @@
   <Billboard>
     <Film>Hollow Knight 4</Film>
     <Cinema>VibeJo</Cinema>
-    <Genre>23.07.2024</Genre>
-    <Date>Action</Date>
+    <Genre>Action</Genre>
+    <Date>23.07.2024</Date>
     <Start>20:50</Start>
     <End>22:52</End>
     <Duration>122</Duration>
@@ -84,8 +84,8 @@
   <Billboard>
     <Film>Alien Isolation 2</Film>
     <Cinema>EvilLight</Cinema>
-    <Genre>23.07.2024</Genre>
-    <Date>Horror</Date>
+    <Genre>Horror</Genre>
+    <Date>23.07.2024</Date>
     <Start>12:50</Start>
     <End>14:52</End>
     <Duration>122</Duration>
@@ -93,8 +93,8 @@
   <Billboard>
     <Film>Silent Hill 3</Film>
     <Cinema>EvilLight</Cinema>
-    <Genre>23.07.2024</Genre>
-    <Date>Horror</Date>
+    <Genre>Horror</Genre>
+    <Date>23.07.2024</Date>
     <Start>10:40</Start>
     <End>12:41</End>
     <Duration>121</Duration>
@@ -102,8 +102,8 @@
   <Billboard>
     <Film>Night in the Wood</Film>
     <Cinema>RestlessDreams</Cinema>
-    <Genre>23.07.2024</Genre>
-    <Date>Drama</Date>
+    <Genre>Drama</Genre>
+    <Date>23.07.2024</Date>
     <Start>13:05</Start>
     <End>16:05</End>
     <Duration>180</Duration>
@@ -111,8 +111,8 @@
   <Billboard>
     <Film>Violet Evergarden</Film>
     <Cinema>RestlessDreams</Cinema>
-    <Genre>23.07.2024</Genre>
-    <Date>Drama</Date>
+    <Genre>Drama</Genre>
+    <Date>23.07.2024</Date>
     <Start>09:40</Start>
     <End>13:00</End>
     <Duration>200</Duration>

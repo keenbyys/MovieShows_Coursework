@@ -31,10 +31,10 @@
             this.tabPageSearch = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelAverage = new System.Windows.Forms.Label();
+            this.labelAverageText = new System.Windows.Forms.Label();
+            this.labelAmount = new System.Windows.Forms.Label();
+            this.labelAmountText = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -48,9 +48,9 @@
             this.buttonLoadUpcomingReleases = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonUpcoming = new System.Windows.Forms.RadioButton();
+            this.radioButtonFirstSessions = new System.Windows.Forms.RadioButton();
+            this.radioButtonAmountAndAverage = new System.Windows.Forms.RadioButton();
             this.radioButtonSessionsWeekend = new System.Windows.Forms.RadioButton();
             this.radioButtonEndSessions = new System.Windows.Forms.RadioButton();
             this.tabPageHome = new System.Windows.Forms.TabPage();
@@ -134,10 +134,10 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.label3);
-            this.groupBox5.Controls.Add(this.label1);
+            this.groupBox5.Controls.Add(this.labelAverage);
+            this.groupBox5.Controls.Add(this.labelAverageText);
+            this.groupBox5.Controls.Add(this.labelAmount);
+            this.groupBox5.Controls.Add(this.labelAmountText);
             this.groupBox5.Controls.Add(this.textBox1);
             this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Location = new System.Drawing.Point(13, 332);
@@ -146,37 +146,37 @@
             this.groupBox5.TabIndex = 14;
             this.groupBox5.TabStop = false;
             // 
-            // label6
+            // labelAverage
             // 
-            this.label6.Location = new System.Drawing.Point(234, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 23);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "~";
+            this.labelAverage.Location = new System.Drawing.Point(234, 21);
+            this.labelAverage.Name = "labelAverage";
+            this.labelAverage.Size = new System.Drawing.Size(56, 23);
+            this.labelAverage.TabIndex = 12;
+            this.labelAverage.Text = "~";
             // 
-            // label5
+            // labelAverageText
             // 
-            this.label5.Location = new System.Drawing.Point(145, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 31);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Average:";
+            this.labelAverageText.Location = new System.Drawing.Point(145, 21);
+            this.labelAverageText.Name = "labelAverageText";
+            this.labelAverageText.Size = new System.Drawing.Size(86, 31);
+            this.labelAverageText.TabIndex = 11;
+            this.labelAverageText.Text = "Average:";
             // 
-            // label3
+            // labelAmount
             // 
-            this.label3.Location = new System.Drawing.Point(95, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 23);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "~";
+            this.labelAmount.Location = new System.Drawing.Point(95, 21);
+            this.labelAmount.Name = "labelAmount";
+            this.labelAmount.Size = new System.Drawing.Size(44, 23);
+            this.labelAmount.TabIndex = 10;
+            this.labelAmount.Text = "~";
             // 
-            // label1
+            // labelAmountText
             // 
-            this.label1.Location = new System.Drawing.Point(6, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 31);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Amount:";
+            this.labelAmountText.Location = new System.Drawing.Point(6, 21);
+            this.labelAmountText.Name = "labelAmountText";
+            this.labelAmountText.Size = new System.Drawing.Size(83, 31);
+            this.labelAmountText.TabIndex = 9;
+            this.labelAmountText.Text = "Amount:";
             // 
             // textBox1
             // 
@@ -252,6 +252,7 @@
             // 
             // dataGridViewMovieShows_Search
             // 
+            this.dataGridViewMovieShows_Search.AllowUserToAddRows = false;
             this.dataGridViewMovieShows_Search.AllowUserToOrderColumns = true;
             this.dataGridViewMovieShows_Search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMovieShows_Search.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -292,9 +293,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.radioButtonUpcoming);
+            this.groupBox3.Controls.Add(this.radioButtonFirstSessions);
+            this.groupBox3.Controls.Add(this.radioButtonAmountAndAverage);
             this.groupBox3.Controls.Add(this.radioButtonSessionsWeekend);
             this.groupBox3.Controls.Add(this.radioButtonEndSessions);
             this.groupBox3.Location = new System.Drawing.Point(13, 3);
@@ -303,38 +304,39 @@
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             // 
-            // radioButton3
+            // radioButtonUpcoming
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(11, 187);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(194, 29);
-            this.radioButton3.TabIndex = 13;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Upcoming releases.";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButtonUpcoming.AutoSize = true;
+            this.radioButtonUpcoming.Location = new System.Drawing.Point(11, 187);
+            this.radioButtonUpcoming.Name = "radioButtonUpcoming";
+            this.radioButtonUpcoming.Size = new System.Drawing.Size(194, 29);
+            this.radioButtonUpcoming.TabIndex = 13;
+            this.radioButtonUpcoming.TabStop = true;
+            this.radioButtonUpcoming.Text = "Upcoming releases.";
+            this.radioButtonUpcoming.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonFirstSessions
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(11, 152);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(143, 29);
-            this.radioButton2.TabIndex = 12;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "First sessions.";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonFirstSessions.AutoSize = true;
+            this.radioButtonFirstSessions.Location = new System.Drawing.Point(11, 152);
+            this.radioButtonFirstSessions.Name = "radioButtonFirstSessions";
+            this.radioButtonFirstSessions.Size = new System.Drawing.Size(143, 29);
+            this.radioButtonFirstSessions.TabIndex = 12;
+            this.radioButtonFirstSessions.TabStop = true;
+            this.radioButtonFirstSessions.Text = "First sessions.";
+            this.radioButtonFirstSessions.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonAmountAndAverage
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(11, 92);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(265, 54);
-            this.radioButton1.TabIndex = 11;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Amount of sessions by date \r\nand the average duration.";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonAmountAndAverage.AutoSize = true;
+            this.radioButtonAmountAndAverage.Location = new System.Drawing.Point(11, 92);
+            this.radioButtonAmountAndAverage.Name = "radioButtonAmountAndAverage";
+            this.radioButtonAmountAndAverage.Size = new System.Drawing.Size(265, 54);
+            this.radioButtonAmountAndAverage.TabIndex = 11;
+            this.radioButtonAmountAndAverage.TabStop = true;
+            this.radioButtonAmountAndAverage.Text = "Amount of sessions by date \r\nand the average duration.";
+            this.radioButtonAmountAndAverage.UseVisualStyleBackColor = true;
+            this.radioButtonAmountAndAverage.CheckedChanged += new System.EventHandler(this.radioButtonAmountAndAverage_CheckedChanged);
             // 
             // radioButtonSessionsWeekend
             // 
@@ -406,7 +408,6 @@
             this.dataGridViewMovieShows_Home.Name = "dataGridViewMovieShows_Home";
             this.dataGridViewMovieShows_Home.Size = new System.Drawing.Size(574, 522);
             this.dataGridViewMovieShows_Home.TabIndex = 0;
-            // 
             // Film
             // 
             this.Film.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -801,16 +802,16 @@
         private System.Windows.Forms.Label labelGenre;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.RadioButton radioButtonSessionsWeekend;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonAmountAndAverage;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButtonFirstSessions;
+        private System.Windows.Forms.RadioButton radioButtonUpcoming;
         private System.Windows.Forms.Button buttonLoadUpcomingReleases;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelAverage;
+        private System.Windows.Forms.Label labelAverageText;
+        private System.Windows.Forms.Label labelAmount;
+        private System.Windows.Forms.Label labelAmountText;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonExit;
