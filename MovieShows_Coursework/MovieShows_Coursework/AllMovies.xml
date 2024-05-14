@@ -6,7 +6,7 @@
     <Cinema>RestlessDreams</Cinema>
     <Genre>Drama</Genre>
     <Date>22.07.2024</Date>
-	<Day>Monday</Day>
+	<Day>Sunday</Day>
     <Start>14:40</Start>
     <End>17:40</End>
     <Duration>180</Duration>
@@ -16,6 +16,7 @@
     <Cinema>EvilLight</Cinema>
     <Genre>Action</Genre>
     <Date>22.07.2024</Date>
+	<Day>Sunday</Day>
     <Start>13:35</Start>
     <End>15:35</End>
     <Duration>120</Duration>
@@ -25,6 +26,7 @@
     <Cinema>EvilLight</Cinema>
     <Genre>Horror</Genre>
     <Date>22.07.2024</Date>
+	<Day>Sunday</Day>
     <Start>09:30</Start>
     <End>11:35</End>
     <Duration>125</Duration>
@@ -33,6 +35,7 @@
     <Film>Hollow Knight 2</Film>
     <Cinema>VibeJo</Cinema>
     <Genre>Action</Genre>
+	<Day>Sunday</Day>
     <Date>22.07.2024</Date>
     <Start>17:00</Start>
     <End>19:00</End>
@@ -43,6 +46,7 @@
     <Cinema>VibeJo</Cinema>
     <Genre>Drama</Genre>
     <Date>22.07.2024</Date>
+	<Day>Sunday</Day>  
     <Start>12:00</Start>
     <End>15:00</End>
     <Duration>180</Duration>
@@ -52,6 +56,7 @@
     <Cinema>EvilLight</Cinema>
     <Genre>Action</Genre>
     <Date>22.07.2024</Date>
+	<Day>Sunday</Day>
     <Start>11:40</Start>
     <End>13:30</End>
     <Duration>110</Duration>
@@ -61,6 +66,7 @@
     <Cinema>RestlessDreams</Cinema>
     <Genre>Drama</Genre>
     <Date>23.07.2024</Date>
+	<Day>Monday</Day>  
     <Start>19:35</Start>
     <End>22:20</End>
     <Duration>165</Duration>
@@ -70,7 +76,8 @@
     <Cinema>VibeJo</Cinema>
     <Genre>Action</Genre>
     <Date>23.07.2024</Date>
-    <Start>18:40</Start>
+	<Day>Monday</Day>
+	<Start>18:40</Start>
     <End>20:41</End>
     <Duration>121</Duration>
   </Billboard>
@@ -79,6 +86,7 @@
     <Cinema>VibeJo</Cinema>
     <Genre>Action</Genre>
     <Date>23.07.2024</Date>
+	<Day>Monday</Day>
     <Start>20:50</Start>
     <End>22:52</End>
     <Duration>122</Duration>
@@ -88,6 +96,7 @@
     <Cinema>EvilLight</Cinema>
     <Genre>Horror</Genre>
     <Date>23.07.2024</Date>
+	<Day>Monday</Day>  
     <Start>12:50</Start>
     <End>14:52</End>
     <Duration>122</Duration>
@@ -97,6 +106,7 @@
     <Cinema>EvilLight</Cinema>
     <Genre>Horror</Genre>
     <Date>23.07.2024</Date>
+	<Day>Monday</Day>
     <Start>10:40</Start>
     <End>12:41</End>
     <Duration>121</Duration>
@@ -106,6 +116,7 @@
     <Cinema>RestlessDreams</Cinema>
     <Genre>Drama</Genre>
     <Date>23.07.2024</Date>
+	<Day>Monday</Day>
     <Start>13:05</Start>
     <End>16:05</End>
     <Duration>180</Duration>
@@ -115,6 +126,7 @@
     <Cinema>RestlessDreams</Cinema>
     <Genre>Drama</Genre>
     <Date>23.07.2024</Date>
+	<Day>Monday</Day>
     <Start>09:40</Start>
     <End>13:00</End>
     <Duration>200</Duration>

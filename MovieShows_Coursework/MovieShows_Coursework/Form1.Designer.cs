@@ -45,6 +45,7 @@
             this.panelSearch = new System.Windows.Forms.Panel();
             this.dataGridViewMovieShows_Search = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonClear_Search = new System.Windows.Forms.Button();
             this.buttonLoadUpcomingReleases = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -57,13 +58,6 @@
             this.panelHome = new System.Windows.Forms.Panel();
             this.panelDataMovieShows = new System.Windows.Forms.Panel();
             this.dataGridViewMovieShows_Home = new System.Windows.Forms.DataGridView();
-            this.Film = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cinema = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.End = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonClear_Home = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
@@ -89,7 +83,16 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.buttonExit = new System.Windows.Forms.Button();
             this.checkBoxRoot = new System.Windows.Forms.CheckBox();
-            this.buttonClear_Search = new System.Windows.Forms.Button();
+            this.labelDayOfWeeknd = new System.Windows.Forms.Label();
+            this.comboBoxDayOfWeeknd = new System.Windows.Forms.ComboBox();
+            this.Film = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cinema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.End = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -273,6 +276,16 @@
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             // 
+            // buttonClear_Search
+            // 
+            this.buttonClear_Search.Location = new System.Drawing.Point(11, 109);
+            this.buttonClear_Search.Name = "buttonClear_Search";
+            this.buttonClear_Search.Size = new System.Drawing.Size(279, 34);
+            this.buttonClear_Search.TabIndex = 15;
+            this.buttonClear_Search.Text = "Clear";
+            this.buttonClear_Search.UseVisualStyleBackColor = true;
+            this.buttonClear_Search.Click += new System.EventHandler(this.buttonClear_Search_Click);
+            // 
             // buttonLoadUpcomingReleases
             // 
             this.buttonLoadUpcomingReleases.Enabled = false;
@@ -352,6 +365,7 @@
             this.radioButtonSessionsWeeknd.TabStop = true;
             this.radioButtonSessionsWeeknd.Text = "Sessions on weeknds.";
             this.radioButtonSessionsWeeknd.UseVisualStyleBackColor = true;
+            this.radioButtonSessionsWeeknd.CheckedChanged += new System.EventHandler(this.radioButtonSessionsWeeknd_CheckedChanged);
             // 
             // radioButtonEndSessions
             // 
@@ -363,6 +377,7 @@
             this.radioButtonEndSessions.TabStop = true;
             this.radioButtonEndSessions.Text = "The end of each session.";
             this.radioButtonEndSessions.UseVisualStyleBackColor = true;
+            this.radioButtonEndSessions.CheckedChanged += new System.EventHandler(this.radioButtonEndSessions_CheckedChanged);
             // 
             // tabPageHome
             // 
@@ -404,6 +419,7 @@
             this.Cinema,
             this.Genre,
             this.Date,
+            this.Day,
             this.Start,
             this.End,
             this.Duration});
@@ -412,55 +428,6 @@
             this.dataGridViewMovieShows_Home.Name = "dataGridViewMovieShows_Home";
             this.dataGridViewMovieShows_Home.Size = new System.Drawing.Size(574, 522);
             this.dataGridViewMovieShows_Home.TabIndex = 0;
-            // 
-            // Film
-            // 
-            this.Film.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Film.HeaderText = "Film";
-            this.Film.Name = "Film";
-            this.Film.Width = 72;
-            // 
-            // Cinema
-            // 
-            this.Cinema.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Cinema.HeaderText = "Cinema";
-            this.Cinema.Name = "Cinema";
-            this.Cinema.Width = 101;
-            // 
-            // Genre
-            // 
-            this.Genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Genre.HeaderText = "Genre";
-            this.Genre.Name = "Genre";
-            this.Genre.Width = 88;
-            // 
-            // Date
-            // 
-            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.Width = 76;
-            // 
-            // Start
-            // 
-            this.Start.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Start.HeaderText = "Start";
-            this.Start.Name = "Start";
-            this.Start.Width = 76;
-            // 
-            // End
-            // 
-            this.End.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.End.HeaderText = "End";
-            this.End.Name = "End";
-            this.End.Width = 69;
-            // 
-            // Duration
-            // 
-            this.Duration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Duration.HeaderText = "Duration";
-            this.Duration.Name = "Duration";
-            this.Duration.Width = 111;
             // 
             // groupBox1
             // 
@@ -542,6 +509,8 @@
             // 
             // groupBoxInputData
             // 
+            this.groupBoxInputData.Controls.Add(this.comboBoxDayOfWeeknd);
+            this.groupBoxInputData.Controls.Add(this.labelDayOfWeeknd);
             this.groupBoxInputData.Controls.Add(this.dateTimePickerEnd);
             this.groupBoxInputData.Controls.Add(this.dateTimePickerStart);
             this.groupBoxInputData.Controls.Add(this.labelEnd);
@@ -558,7 +527,7 @@
             this.groupBoxInputData.Controls.Add(this.labelGenre);
             this.groupBoxInputData.Location = new System.Drawing.Point(13, 3);
             this.groupBoxInputData.Name = "groupBoxInputData";
-            this.groupBoxInputData.Size = new System.Drawing.Size(300, 231);
+            this.groupBoxInputData.Size = new System.Drawing.Size(300, 265);
             this.groupBoxInputData.TabIndex = 9;
             this.groupBoxInputData.TabStop = false;
             // 
@@ -569,7 +538,7 @@
             this.dateTimePickerEnd.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePickerEnd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(210, 151);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(210, 188);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(80, 29);
             this.dateTimePickerEnd.TabIndex = 15;
@@ -581,14 +550,14 @@
             this.dateTimePickerStart.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePickerStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerStart.Location = new System.Drawing.Point(65, 151);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(65, 188);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(84, 29);
             this.dateTimePickerStart.TabIndex = 14;
             // 
             // labelEnd
             // 
-            this.labelEnd.Location = new System.Drawing.Point(159, 152);
+            this.labelEnd.Location = new System.Drawing.Point(159, 189);
             this.labelEnd.Name = "labelEnd";
             this.labelEnd.Size = new System.Drawing.Size(104, 28);
             this.labelEnd.TabIndex = 13;
@@ -596,7 +565,7 @@
             // 
             // labelDuration
             // 
-            this.labelDuration.Location = new System.Drawing.Point(6, 189);
+            this.labelDuration.Location = new System.Drawing.Point(6, 226);
             this.labelDuration.Name = "labelDuration";
             this.labelDuration.Size = new System.Drawing.Size(143, 28);
             this.labelDuration.TabIndex = 11;
@@ -604,7 +573,7 @@
             // 
             // labelBeginning
             // 
-            this.labelBeginning.Location = new System.Drawing.Point(6, 152);
+            this.labelBeginning.Location = new System.Drawing.Point(6, 189);
             this.labelBeginning.Name = "labelBeginning";
             this.labelBeginning.Size = new System.Drawing.Size(104, 28);
             this.labelBeginning.TabIndex = 10;
@@ -657,7 +626,7 @@
             // 
             this.numericUpDownDuration.Enabled = false;
             this.numericUpDownDuration.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDownDuration.Location = new System.Drawing.Point(155, 190);
+            this.numericUpDownDuration.Location = new System.Drawing.Point(155, 227);
             this.numericUpDownDuration.Maximum = new decimal(new int[] {
             500,
             0,
@@ -728,15 +697,79 @@
             this.checkBoxRoot.UseVisualStyleBackColor = true;
             this.checkBoxRoot.CheckedChanged += new System.EventHandler(this.checkBoxRoot_CheckedChanged);
             // 
-            // buttonClear_Search
+            // labelDayOfWeeknd
             // 
-            this.buttonClear_Search.Location = new System.Drawing.Point(11, 109);
-            this.buttonClear_Search.Name = "buttonClear_Search";
-            this.buttonClear_Search.Size = new System.Drawing.Size(279, 34);
-            this.buttonClear_Search.TabIndex = 15;
-            this.buttonClear_Search.Text = "Clear";
-            this.buttonClear_Search.UseVisualStyleBackColor = true;
-            this.buttonClear_Search.Click += new System.EventHandler(this.buttonClear_Search_Click);
+            this.labelDayOfWeeknd.Location = new System.Drawing.Point(6, 153);
+            this.labelDayOfWeeknd.Name = "labelDayOfWeeknd";
+            this.labelDayOfWeeknd.Size = new System.Drawing.Size(143, 28);
+            this.labelDayOfWeeknd.TabIndex = 16;
+            this.labelDayOfWeeknd.Text = "Day of weeknd:";
+            // 
+            // comboBoxDayOfWeeknd
+            // 
+            this.comboBoxDayOfWeeknd.Enabled = false;
+            this.comboBoxDayOfWeeknd.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxDayOfWeeknd.FormattingEnabled = true;
+            this.comboBoxDayOfWeeknd.Location = new System.Drawing.Point(155, 152);
+            this.comboBoxDayOfWeeknd.Name = "comboBoxDayOfWeeknd";
+            this.comboBoxDayOfWeeknd.Size = new System.Drawing.Size(135, 29);
+            this.comboBoxDayOfWeeknd.TabIndex = 17;
+            // 
+            // Film
+            // 
+            this.Film.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Film.HeaderText = "Film";
+            this.Film.Name = "Film";
+            this.Film.Width = 72;
+            // 
+            // Cinema
+            // 
+            this.Cinema.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Cinema.HeaderText = "Cinema";
+            this.Cinema.Name = "Cinema";
+            this.Cinema.Width = 101;
+            // 
+            // Genre
+            // 
+            this.Genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Genre.HeaderText = "Genre";
+            this.Genre.Name = "Genre";
+            this.Genre.Width = 88;
+            // 
+            // Date
+            // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.Width = 76;
+            // 
+            // Day
+            // 
+            this.Day.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Day.HeaderText = "Day";
+            this.Day.Name = "Day";
+            this.Day.Width = 69;
+            // 
+            // Start
+            // 
+            this.Start.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Start.HeaderText = "Start";
+            this.Start.Name = "Start";
+            this.Start.Width = 76;
+            // 
+            // End
+            // 
+            this.End.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.End.HeaderText = "End";
+            this.End.Name = "End";
+            this.End.Width = 69;
+            // 
+            // Duration
+            // 
+            this.Duration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Duration.HeaderText = "Duration";
+            this.Duration.Name = "Duration";
+            this.Duration.Width = 111;
             // 
             // FormJOMovie
             // 
@@ -835,14 +868,17 @@
         private System.Windows.Forms.Label labelEnd;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
+        private System.Windows.Forms.Button buttonClear_Search;
+        private System.Windows.Forms.ComboBox comboBoxDayOfWeeknd;
+        private System.Windows.Forms.Label labelDayOfWeeknd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Film;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cinema;
         private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day;
         private System.Windows.Forms.DataGridViewTextBoxColumn Start;
         private System.Windows.Forms.DataGridViewTextBoxColumn End;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
-        private System.Windows.Forms.Button buttonClear_Search;
     }
 }
 
