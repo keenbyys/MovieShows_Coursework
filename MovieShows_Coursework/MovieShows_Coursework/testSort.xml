@@ -131,23 +131,13 @@
     <Duration>200</Duration>
   </Billboard>
   <Billboard>
-    <Film>Dota 3</Film>
+    <Film>Sigma Satosha</Film>
     <Cinema>EvilLight</Cinema>
     <Genre>Fantasy</Genre>
-    <Date>17.07.2032</Date>
-    <Day>Friday</Day>
-    <Start>12:00</Start>
-    <End>14:00</End>
-    <Duration>120</Duration>
-  </Billboard>
-  <Billboard>
-    <Film>Кладбище даты 2</Film>
-    <Cinema>VibeJo</Cinema>
-    <Genre>Thriller</Genre>
-    <Date>18.05.2024</Date>
+    <Date>16.05.2024</Date>
     <Day>Saturday</Day>
-    <Start>09:00</Start>
-    <End>09:10</End>
-    <Duration>10</Duration>
+    <Start>12:00</Start>
+    <End>23:00</End>
+    <Duration>477</Duration>
   </Billboard>
 </NewDataSet>

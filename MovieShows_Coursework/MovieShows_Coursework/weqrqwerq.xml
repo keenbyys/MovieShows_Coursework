@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Billboard>
+    <Film>Sigma</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Comedy</Genre>
+    <Date>16.05.2024</Date>
+    <Day>Sunday</Day>
+    <Start>12:00</Start>
+    <End>23:00</End>
+    <Duration>124</Duration>
+  </Billboard>
+</NewDataSet>
