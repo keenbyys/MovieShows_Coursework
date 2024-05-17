@@ -1,0 +1,153 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Billboard>
+    <Film>Alan Wake</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Horror</Genre>
+    <Date>05.06.2024</Date>
+    <Day>Wednesday</Day>
+    <Start>11:40</Start>
+    <End>13:40</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Alan Wake</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Horror</Genre>
+    <Date>03.06.2024</Date>
+    <Day>Monday</Day>
+    <Start>15:30</Start>
+    <End>17:30</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Alan Wake</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Horror</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>12:20</Start>
+    <End>14:20</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Disco Elisium</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Drama</Genre>
+    <Date>05.06.2024</Date>
+    <Day>Wednesday</Day>
+    <Start>13:50</Start>
+    <End>16:50</End>
+    <Duration>180</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Disco Elisium</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Drama</Genre>
+    <Date>07.06.2024</Date>
+    <Day>Friday</Day>
+    <Start>08:00</Start>
+    <End>11:00</End>
+    <Duration>180</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Disco Elisium</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Drama</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>18:50</Start>
+    <End>21:50</End>
+    <Duration>180</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Dota 3</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Action</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>16:40</Start>
+    <End>18:40</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Dota 3</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Action</Genre>
+    <Date>05.06.2024</Date>
+    <Day>Wednesday</Day>
+    <Start>09:30</Start>
+    <End>11:30</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Hades 3</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Action</Genre>
+    <Date>07.06.2024</Date>
+    <Day>Friday</Day>
+    <Start>11:10</Start>
+    <End>12:10</End>
+    <Duration>60</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Hades 3</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Action</Genre>
+    <Date>03.06.2024</Date>
+    <Day>Monday</Day>
+    <Start>09:00</Start>
+    <End>10:00</End>
+    <Duration>60</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Resident Evil 4</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Thriller</Genre>
+    <Date>03.06.2024</Date>
+    <Day>Monday</Day>
+    <Start>10:10</Start>
+    <End>12:10</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Resident Evil 4</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Thriller</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>14:30</Start>
+    <End>16:30</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Resident Evil 4</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Thriller</Genre>
+    <Date>05.06.2024</Date>
+    <Day>Wednesday</Day>
+    <Start>17:00</Start>
+    <End>19:00</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Spiritfarer: Farewell</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Drama</Genre>
+    <Date>03.06.2024</Date>
+    <Day>Monday</Day>
+    <Start>12:20</Start>
+    <End>15:20</End>
+    <Duration>180</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Spiritfarer: Farewell</Film>
+    <Cinema>EvilLight</Cinema>
+    <Genre>Drama</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>09:10</Start>
+    <End>12:10</End>
+    <Duration>180</Duration>
+  </Billboard>
+</NewDataSet>

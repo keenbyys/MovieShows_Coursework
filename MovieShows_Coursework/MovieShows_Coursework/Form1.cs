@@ -145,7 +145,9 @@ namespace MovieShows_Coursework
                     dataGridViewMovieShows_Home.Rows[n].Cells[5].Value = start;
                     dataGridViewMovieShows_Home.Rows[n].Cells[6].Value = end;
                     dataGridViewMovieShows_Home.Rows[n].Cells[7].Value = duration;
-                } 
+
+                    dataGridViewMovieShows_Home.Sort(dataGridViewMovieShows_Home.Columns[0], System.ComponentModel.ListSortDirection.Ascending);
+                }
                 else
                 {
                     MessageBox.Show("Duplicate data. The data already exists.");
@@ -329,6 +331,8 @@ namespace MovieShows_Coursework
                                 dataGridView.Rows[n].Cells[5].Value = item["Start"];
                                 dataGridView.Rows[n].Cells[6].Value = item["End"];
                                 dataGridView.Rows[n].Cells[7].Value = item["Duration"];
+
+                                dataGridView.Sort(dataGridView.Columns[0], System.ComponentModel.ListSortDirection.Ascending);
                             }
                             else
                             {
@@ -342,7 +346,7 @@ namespace MovieShows_Coursework
                                 dataGridView.Rows[n].Cells[6].Value = item["End"];
                                 dataGridView.Rows[n].Cells[7].Value = item["Duration"];
 
-                                dataGridViewMovieShows_Home.Sort(dataGridViewMovieShows_Home.Columns[0], System.ComponentModel.ListSortDirection.Ascending);
+                                dataGridView.Sort(dataGridView.Columns[0], System.ComponentModel.ListSortDirection.Ascending);
                             }
                         }
                     }

@@ -117,7 +117,7 @@
             this.tabPageSearch.Location = new System.Drawing.Point(4, 34);
             this.tabPageSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageSearch.Name = "tabPageSearch";
-            this.tabPageSearch.Size = new System.Drawing.Size(907, 550);
+            this.tabPageSearch.Size = new System.Drawing.Size(1301, 550);
             this.tabPageSearch.TabIndex = 1;
             this.tabPageSearch.Text = "Search";
             this.tabPageSearch.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(907, 550);
+            this.panel1.Size = new System.Drawing.Size(1301, 550);
             this.panel1.TabIndex = 1;
             // 
             // groupBox5
@@ -250,18 +250,19 @@
             this.panelSearch.Controls.Add(this.dataGridViewMovieShows_Search);
             this.panelSearch.Location = new System.Drawing.Point(319, 16);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(574, 522);
+            this.panelSearch.Size = new System.Drawing.Size(969, 522);
             this.panelSearch.TabIndex = 13;
             // 
             // dataGridViewMovieShows_Search
             // 
             this.dataGridViewMovieShows_Search.AllowUserToAddRows = false;
             this.dataGridViewMovieShows_Search.AllowUserToOrderColumns = true;
+            this.dataGridViewMovieShows_Search.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewMovieShows_Search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMovieShows_Search.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewMovieShows_Search.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewMovieShows_Search.Name = "dataGridViewMovieShows_Search";
-            this.dataGridViewMovieShows_Search.Size = new System.Drawing.Size(574, 522);
+            this.dataGridViewMovieShows_Search.Size = new System.Drawing.Size(969, 522);
             this.dataGridViewMovieShows_Search.TabIndex = 1;
             // 
             // groupBox2
@@ -385,7 +386,7 @@
             this.tabPageHome.Location = new System.Drawing.Point(4, 34);
             this.tabPageHome.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageHome.Name = "tabPageHome";
-            this.tabPageHome.Size = new System.Drawing.Size(907, 550);
+            this.tabPageHome.Size = new System.Drawing.Size(1301, 550);
             this.tabPageHome.TabIndex = 0;
             this.tabPageHome.Text = "Home";
             this.tabPageHome.UseVisualStyleBackColor = true;
@@ -398,7 +399,7 @@
             this.panelHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHome.Location = new System.Drawing.Point(0, 0);
             this.panelHome.Name = "panelHome";
-            this.panelHome.Size = new System.Drawing.Size(907, 550);
+            this.panelHome.Size = new System.Drawing.Size(1301, 550);
             this.panelHome.TabIndex = 0;
             // 
             // panelDataMovieShows
@@ -406,13 +407,14 @@
             this.panelDataMovieShows.Controls.Add(this.dataGridViewMovieShows_Home);
             this.panelDataMovieShows.Location = new System.Drawing.Point(319, 16);
             this.panelDataMovieShows.Name = "panelDataMovieShows";
-            this.panelDataMovieShows.Size = new System.Drawing.Size(574, 522);
+            this.panelDataMovieShows.Size = new System.Drawing.Size(969, 522);
             this.panelDataMovieShows.TabIndex = 13;
             // 
             // dataGridViewMovieShows_Home
             // 
             this.dataGridViewMovieShows_Home.AllowUserToAddRows = false;
             this.dataGridViewMovieShows_Home.AllowUserToOrderColumns = true;
+            this.dataGridViewMovieShows_Home.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewMovieShows_Home.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMovieShows_Home.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Film,
@@ -426,7 +428,7 @@
             this.dataGridViewMovieShows_Home.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewMovieShows_Home.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewMovieShows_Home.Name = "dataGridViewMovieShows_Home";
-            this.dataGridViewMovieShows_Home.Size = new System.Drawing.Size(574, 522);
+            this.dataGridViewMovieShows_Home.Size = new System.Drawing.Size(969, 522);
             this.dataGridViewMovieShows_Home.TabIndex = 0;
             // 
             // Film
@@ -748,12 +750,12 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(915, 588);
+            this.tabControl1.Size = new System.Drawing.Size(1309, 588);
             this.tabControl1.TabIndex = 0;
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(813, 6);
+            this.buttonExit.Location = new System.Drawing.Point(1207, 6);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(113, 34);
             this.buttonExit.TabIndex = 6;
@@ -764,7 +766,7 @@
             // checkBoxRoot
             // 
             this.checkBoxRoot.AutoSize = true;
-            this.checkBoxRoot.Location = new System.Drawing.Point(604, 10);
+            this.checkBoxRoot.Location = new System.Drawing.Point(998, 10);
             this.checkBoxRoot.Name = "checkBoxRoot";
             this.checkBoxRoot.Size = new System.Drawing.Size(203, 29);
             this.checkBoxRoot.TabIndex = 7;
@@ -777,7 +779,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(943, 618);
+            this.ClientSize = new System.Drawing.Size(1337, 618);
             this.Controls.Add(this.checkBoxRoot);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.tabControl1);

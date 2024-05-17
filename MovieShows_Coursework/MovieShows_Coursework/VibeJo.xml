@@ -1,0 +1,153 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Billboard>
+    <Film>Alien Isolation 2</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Horror</Genre>
+    <Date>04.06.2024</Date>
+    <Day>Tuesday</Day>
+    <Start>17:40</Start>
+    <End>19:40</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Alien Isolation 2</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Horror</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>09:30</Start>
+    <End>11:30</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Hades 2</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Action</Genre>
+    <Date>04.06.2024</Date>
+    <Day>Tuesday</Day>
+    <Start>15:30</Start>
+    <End>17:30</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Hades 2</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Action</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>11:40</Start>
+    <End>13:40</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Hollow Knight 2</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Action</Genre>
+    <Date>04.06.2024</Date>
+    <Day>Tuesday</Day>
+    <Start>09:00</Start>
+    <End>10:00</End>
+    <Duration>60</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Hollow Knight 2</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Action</Genre>
+    <Date>07.06.2024</Date>
+    <Day>Friday</Day>
+    <Start>16:30</Start>
+    <End>17:30</End>
+    <Duration>60</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Hollow Knight 2</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Action</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>13:50</Start>
+    <End>14:50</End>
+    <Duration>60</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Resident Evil: Apocalypse</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Action</Genre>
+    <Date>07.06.2024</Date>
+    <Day>Friday</Day>
+    <Start>14:20</Start>
+    <End>16:20</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Resident Evil: Apocalypse</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Action</Genre>
+    <Date>04.06.2024</Date>
+    <Day>Tuesday</Day>
+    <Start>13:20</Start>
+    <End>15:20</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Resident Evil: Apocalypse</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Action</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>20:20</Start>
+    <End>22:20</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Silent Hill 2</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Horror</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>15:00</Start>
+    <End>17:00</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>Silent Hill 2</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Horror</Genre>
+    <Date>07.06.2024</Date>
+    <Day>Friday</Day>
+    <Start>09:00</Start>
+    <End>11:00</End>
+    <Duration>120</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>The Last of Us. Part 3</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Thriller</Genre>
+    <Date>07.06.2024</Date>
+    <Day>Friday</Day>
+    <Start>11:10</Start>
+    <End>14:10</End>
+    <Duration>180</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>The Last of Us. Part 3</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Thriller</Genre>
+    <Date>09.06.2024</Date>
+    <Day>Sunday</Day>
+    <Start>17:10</Start>
+    <End>20:10</End>
+    <Duration>180</Duration>
+  </Billboard>
+  <Billboard>
+    <Film>The Last of Us. Part 3</Film>
+    <Cinema>VibeJo</Cinema>
+    <Genre>Thriller</Genre>
+    <Date>04.06.2024</Date>
+    <Day>Tuesday</Day>
+    <Start>10:10</Start>
+    <End>13:10</End>
+    <Duration>180</Duration>
+  </Billboard>
+</NewDataSet>
