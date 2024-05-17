@@ -37,6 +37,11 @@
             this.labelAmountText = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.comboBoxNameCinema = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePickerDateShow_Search = new System.Windows.Forms.DateTimePicker();
+            this.labelNameCinema_Search = new System.Windows.Forms.Label();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.dataGridViewMovieShows_Search = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -69,6 +74,7 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.groupBoxInputData = new System.Windows.Forms.GroupBox();
+            this.comboBoxNameCinema_Home = new System.Windows.Forms.ComboBox();
             this.comboBoxDayOfWeeknd = new System.Windows.Forms.ComboBox();
             this.labelDayOfWeeknd = new System.Windows.Forms.Label();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
@@ -87,15 +93,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.buttonExit = new System.Windows.Forms.Button();
             this.checkBoxRoot = new System.Windows.Forms.CheckBox();
-            this.labelNameCinema_Search = new System.Windows.Forms.Label();
-            this.dateTimePickerDateShow_Search = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxNameCinema = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBoxNameCinema_Home = new System.Windows.Forms.ComboBox();
             this.tabPageSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.panelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Search)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -108,7 +109,6 @@
             this.groupBoxInputData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPageSearch
@@ -156,7 +156,6 @@
             this.labelAverage.Name = "labelAverage";
             this.labelAverage.Size = new System.Drawing.Size(56, 23);
             this.labelAverage.TabIndex = 12;
-            this.labelAverage.Text = "~";
             // 
             // labelAverageText
             // 
@@ -172,7 +171,6 @@
             this.labelAmount.Name = "labelAmount";
             this.labelAmount.Size = new System.Drawing.Size(44, 23);
             this.labelAmount.TabIndex = 10;
-            this.labelAmount.Text = "~";
             // 
             // labelAmountText
             // 
@@ -198,6 +196,54 @@
             this.label2.Size = new System.Drawing.Size(133, 28);
             this.label2.TabIndex = 0;
             this.label2.Text = "Name cinema:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.comboBoxNameCinema);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.dateTimePickerDateShow_Search);
+            this.groupBox4.Controls.Add(this.labelNameCinema_Search);
+            this.groupBox4.Location = new System.Drawing.Point(13, 232);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(300, 104);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            // 
+            // comboBoxNameCinema
+            // 
+            this.comboBoxNameCinema.Enabled = false;
+            this.comboBoxNameCinema.FormattingEnabled = true;
+            this.comboBoxNameCinema.Location = new System.Drawing.Point(145, 60);
+            this.comboBoxNameCinema.Name = "comboBoxNameCinema";
+            this.comboBoxNameCinema.Size = new System.Drawing.Size(145, 33);
+            this.comboBoxNameCinema.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(6, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 23);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Date:";
+            // 
+            // dateTimePickerDateShow_Search
+            // 
+            this.dateTimePickerDateShow_Search.CalendarFont = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerDateShow_Search.Enabled = false;
+            this.dateTimePickerDateShow_Search.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerDateShow_Search.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDateShow_Search.Location = new System.Drawing.Point(67, 26);
+            this.dateTimePickerDateShow_Search.Name = "dateTimePickerDateShow_Search";
+            this.dateTimePickerDateShow_Search.Size = new System.Drawing.Size(223, 29);
+            this.dateTimePickerDateShow_Search.TabIndex = 5;
+            // 
+            // labelNameCinema_Search
+            // 
+            this.labelNameCinema_Search.Location = new System.Drawing.Point(6, 63);
+            this.labelNameCinema_Search.Name = "labelNameCinema_Search";
+            this.labelNameCinema_Search.Size = new System.Drawing.Size(133, 28);
+            this.labelNameCinema_Search.TabIndex = 0;
+            this.labelNameCinema_Search.Text = "Name cinema:";
             // 
             // panelSearch
             // 
@@ -541,6 +587,16 @@
             this.groupBoxInputData.TabIndex = 9;
             this.groupBoxInputData.TabStop = false;
             // 
+            // comboBoxNameCinema_Home
+            // 
+            this.comboBoxNameCinema_Home.Enabled = false;
+            this.comboBoxNameCinema_Home.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxNameCinema_Home.FormattingEnabled = true;
+            this.comboBoxNameCinema_Home.Location = new System.Drawing.Point(145, 60);
+            this.comboBoxNameCinema_Home.Name = "comboBoxNameCinema_Home";
+            this.comboBoxNameCinema_Home.Size = new System.Drawing.Size(145, 29);
+            this.comboBoxNameCinema_Home.TabIndex = 18;
+            // 
             // comboBoxDayOfWeeknd
             // 
             this.comboBoxDayOfWeeknd.Enabled = false;
@@ -716,64 +772,6 @@
             this.checkBoxRoot.UseVisualStyleBackColor = true;
             this.checkBoxRoot.CheckedChanged += new System.EventHandler(this.checkBoxRoot_CheckedChanged);
             // 
-            // labelNameCinema_Search
-            // 
-            this.labelNameCinema_Search.Location = new System.Drawing.Point(6, 63);
-            this.labelNameCinema_Search.Name = "labelNameCinema_Search";
-            this.labelNameCinema_Search.Size = new System.Drawing.Size(133, 28);
-            this.labelNameCinema_Search.TabIndex = 0;
-            this.labelNameCinema_Search.Text = "Name cinema:";
-            // 
-            // dateTimePickerDateShow_Search
-            // 
-            this.dateTimePickerDateShow_Search.CalendarFont = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerDateShow_Search.Enabled = false;
-            this.dateTimePickerDateShow_Search.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerDateShow_Search.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDateShow_Search.Location = new System.Drawing.Point(67, 26);
-            this.dateTimePickerDateShow_Search.Name = "dateTimePickerDateShow_Search";
-            this.dateTimePickerDateShow_Search.Size = new System.Drawing.Size(223, 29);
-            this.dateTimePickerDateShow_Search.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(6, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 23);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Date:";
-            // 
-            // comboBoxNameCinema
-            // 
-            this.comboBoxNameCinema.Enabled = false;
-            this.comboBoxNameCinema.FormattingEnabled = true;
-            this.comboBoxNameCinema.Location = new System.Drawing.Point(145, 60);
-            this.comboBoxNameCinema.Name = "comboBoxNameCinema";
-            this.comboBoxNameCinema.Size = new System.Drawing.Size(145, 33);
-            this.comboBoxNameCinema.TabIndex = 9;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.comboBoxNameCinema);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.dateTimePickerDateShow_Search);
-            this.groupBox4.Controls.Add(this.labelNameCinema_Search);
-            this.groupBox4.Location = new System.Drawing.Point(13, 232);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(300, 104);
-            this.groupBox4.TabIndex = 13;
-            this.groupBox4.TabStop = false;
-            // 
-            // comboBoxNameCinema_Home
-            // 
-            this.comboBoxNameCinema_Home.Enabled = false;
-            this.comboBoxNameCinema_Home.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxNameCinema_Home.FormattingEnabled = true;
-            this.comboBoxNameCinema_Home.Location = new System.Drawing.Point(145, 60);
-            this.comboBoxNameCinema_Home.Name = "comboBoxNameCinema_Home";
-            this.comboBoxNameCinema_Home.Size = new System.Drawing.Size(145, 29);
-            this.comboBoxNameCinema_Home.TabIndex = 18;
-            // 
             // FormJOMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -794,6 +792,7 @@
             this.panel1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.panelSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Search)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -808,7 +807,6 @@
             this.groupBoxInputData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -14,6 +14,8 @@ using System.Runtime.InteropServices;
 using System.Data.SqlTypes;
 using static MovieShows_Coursework.FormJOMovie;
 using static System.Net.WebRequestMethods;
+using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace MovieShows_Coursework
 {
@@ -28,9 +30,8 @@ namespace MovieShows_Coursework
             InitializeComponent();
             LoadDataFromXml(xmlFilePath);
         }
-        // 
-        // LOAD FORM
-        //
+        
+
         private void FormJOMovie_Load(object sender, EventArgs e)
         {
             comboBoxNameCinema.Items.Add("EvilLight");
@@ -124,16 +125,55 @@ namespace MovieShows_Coursework
             }
             else
             {
-                int n = dataGridViewMovieShows_Home.Rows.Add();
-                dataGridViewMovieShows_Home.Rows[n].Cells[0].Value = textBoxNameFilm.Text;
-                dataGridViewMovieShows_Home.Rows[n].Cells[1].Value = comboBoxNameCinema_Home.Text;
-                dataGridViewMovieShows_Home.Rows[n].Cells[2].Value = comboBoxGenreFilm.Text;
-                dataGridViewMovieShows_Home.Rows[n].Cells[3].Value = dateTimePickerDateShow_Home.Text;
-                dataGridViewMovieShows_Home.Rows[n].Cells[4].Value = comboBoxDayOfWeeknd.Text;
-                dataGridViewMovieShows_Home.Rows[n].Cells[5].Value = dateTimePickerStart.Text;
-                dataGridViewMovieShows_Home.Rows[n].Cells[6].Value = dateTimePickerEnd.Text;
-                dataGridViewMovieShows_Home.Rows[n].Cells[7].Value = numericUpDownDuration.Text;
+                string film = textBoxNameFilm.Text;
+                string cinema = comboBoxNameCinema_Home.Text;
+                string genre = comboBoxGenreFilm.Text;
+                string date = dateTimePickerDateShow_Home.Text;
+                string day = comboBoxDayOfWeeknd.Text;
+                string start = dateTimePickerStart.Text;
+                string end = dateTimePickerEnd.Text;
+                int duration = Convert.ToInt32(numericUpDownDuration.Text);
+
+                if (!IsDuplicateData(film, cinema, genre, date, day, start, end, duration))
+                {
+                    int n = dataGridViewMovieShows_Home.Rows.Add();
+                    dataGridViewMovieShows_Home.Rows[n].Cells[0].Value = film;
+                    dataGridViewMovieShows_Home.Rows[n].Cells[1].Value = cinema;
+                    dataGridViewMovieShows_Home.Rows[n].Cells[2].Value = genre;
+                    dataGridViewMovieShows_Home.Rows[n].Cells[3].Value = date;
+                    dataGridViewMovieShows_Home.Rows[n].Cells[4].Value = day;
+                    dataGridViewMovieShows_Home.Rows[n].Cells[5].Value = start;
+                    dataGridViewMovieShows_Home.Rows[n].Cells[6].Value = end;
+                    dataGridViewMovieShows_Home.Rows[n].Cells[7].Value = duration;
+                } 
+                else
+                {
+                    MessageBox.Show("Duplicate data. The data already exists.");
+                }
+
             }
+        }
+        //
+        // duplicate data [bool]
+        //
+        private bool IsDuplicateData(string film, string cinema, string genre, string date, string day, string start, string end, int duration)
+        {
+            foreach (DataGridViewRow row in dataGridViewMovieShows_Home.Rows)
+            {
+                if (row.Cells[0].Value != null &&
+                    row.Cells[0].Value.ToString() == film && 
+                    row.Cells[1].Value.ToString() == cinema && 
+                    row.Cells[2].Value.ToString() == genre && 
+                    row.Cells[3].Value.ToString() == date && 
+                    row.Cells[4].Value.ToString() == day && 
+                    row.Cells[5].Value.ToString() == start &&
+                    row.Cells[6].Value.ToString() == end && 
+                    Convert.ToInt32(row.Cells[7].Value)== duration)
+                {
+                    return true; // Found duplicate
+                }
+            }
+            return false;
         }
         //
         // edit row [button]
@@ -301,6 +341,8 @@ namespace MovieShows_Coursework
                                 dataGridView.Rows[n].Cells[5].Value = item["Start"];
                                 dataGridView.Rows[n].Cells[6].Value = item["End"];
                                 dataGridView.Rows[n].Cells[7].Value = item["Duration"];
+
+                                dataGridViewMovieShows_Home.Sort(dataGridViewMovieShows_Home.Columns[0], System.ComponentModel.ListSortDirection.Ascending);
                             }
                         }
                     }
@@ -388,83 +430,86 @@ namespace MovieShows_Coursework
         //
         // binary search [algorithm]
         //
-        /*
-        private int BinarySearch(List<Billboard> billboards, string targetDate)
+        private int BinarySearch(List<Billboard> billboard, string title, string date)
         {
-            int low = 0, high = billboards.Count;
-
-            while (low <= high)
+            int low = 0;
+            int hight = billboard.Count - 1;
+            while (low <= hight)
             {
-                int mid = low + high / 2;
-                int compareValue = string.Compare(billboards[mid].Date, targetDate);
-                if (compareValue == 0)
+                int mid = low + (hight - low) / 2;
+                int dateCompare = string.Compare(billboard[mid].Date, date);
+                int cimenmaCompare = string.Compare(billboard[mid].Cinema, title);
+
+                if (dateCompare == 0 && cimenmaCompare == 0)
+                {
                     return mid;
-                if (compareValue < 0)
+                }
+                if (dateCompare < 0 || (dateCompare == 0 && cimenmaCompare < 0))
+                {
                     low = mid + 1;
-                else 
-                    high = mid - 1;
+                }
+                else
+                {
+                    hight = mid - 1;
+                }
             }
             return -1;
         }
         //
-        // calculate sessions and average duration [algorithm]
+        // calculate sessions and average duration [button]
         //
-        private (int count, double averageDuration) CalculateSessionsAndAverageDuration(List<Billboard> billboards, string date)
+        private void CalculateSessionsAndAverageDuration()
         {
-            int index = BinarySearch(billboards, date);
-            if (index == -1)
-                return (0, 0);
+            string date = dateTimePickerDateShow_Search.Text;
 
-            int count = 0;
-            int totalDuration = 0;
+            List<Billboard> filmsOnDate = billboard.Where(f => f.Date == date).ToList();
 
-            // знаходження всіх сеансів для заданої дати
-            for (int i = index; i < billboards.Count && billboards[i].Date == date; i++)
+            if (filmsOnDate.Any())
             {
-                count++;
-                totalDuration += billboards[i].Duration;
-            }
+                int totalDuration = filmsOnDate.Sum(f => f.Duration);
+                int count = filmsOnDate.Count;
+                double averageDuration = count > 0 ? (double)totalDuration / count : 0;
 
-            double averageDuration = (double)totalDuration / count;
-            return (count, averageDuration);
+                labelAmount.Text = $"{count}";
+                labelAverage.Text = $"{averageDuration}";
+            }
+            else
+            {
+                labelAmount.Text = "—";
+                labelAverage.Text = "—";
+            }
         }
-        //
-        // 
-        //
-        
-        private void buttonCalculate_Click(object sender, EventArgs e)
-        {
-            if (radioButtonAmountAndAverage.Checked == true)
-            {
-                string date = dateTimePickerDateShow_Search.Text;
-                SelectionSortDate(billboard);
-                var (count, averageDuration) = CalculateSessionsAndAverageDuration(billboard, date);
-                MessageBox.Show($"Кількість сеансів: {count}, Середня тривалість: {averageDuration} хвилин");
-            }
-        }*/
         //
         // search [button]
         //
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            SelectionSortDate(billboard);
+            
             if (radioButtonEndSessions.Checked == true)
+            {
+                SelectionSortDate(billboard);
                 DisplayAllEndSessions();
+            }
             if (radioButtonSessionsWeeknd.Checked == true)
+            {
+                SelectionSortDate(billboard);
                 DisplayWeekndSessions();
+            }
             if (radioButtonFirstSessions.Checked == true)
             {
+                SelectionSortDate(billboard);
                 if (comboBoxNameCinema.Text == "")
                 {
                     MessageBox.Show("Error!");
                 } 
                 else
                 {
-                    string searchCinema = comboBoxNameCinema.Text;
-                    string searchDate = dateTimePickerDateShow_Search.Text;
-                    
-                    FindFirstSession(searchCinema, searchDate);
+                    FindFirstSession();
                 }
+            }
+            if (radioButtonAmountAndAverage.Checked == true)
+            {
+                CalculateSessionsAndAverageDuration();
             }
         }
         //
@@ -530,38 +575,27 @@ namespace MovieShows_Coursework
         //
         // first sessions 
         //
-        private void FindFirstSession(string nameCinema, string date)
+        private void FindFirstSession()
         {
-            var firstSessions = new List<Billboard>();
-            foreach (var session in billboard)
-            {
-                if (session.Cinema == nameCinema && session.Date == date)
-                {
-                    firstSessions.Add(session);
-                    break;
-                }
-            }
+            string cinemaName = comboBoxNameCinema.Text;
+            string date = dateTimePickerDateShow_Search.Text;
+
+            SelectionSortDate(billboard);
+            int index = BinarySearch(billboard, cinemaName, date);
 
             dataGridViewMovieShows_Search.Rows.Clear();
 
-            // налаштування DataGridView
-            SettingDataGridView();
-
-            // додавання фільтрованих даних до DataGridView
-            foreach (var session in firstSessions)
+            if (index != -1)
             {
-                string[] row = new string[]
-                {
-                    session.Film,
-                    session.Cinema,
-                    session.Genre,
-                    session.Date,
-                    session.Day,
-                    session.Start,
-                    session.End,
-                    session.Duration.ToString()
-                };
-                dataGridViewMovieShows_Search.Rows.Add(row);
+                var movie = billboard[index];
+
+                SettingDataGridView();
+
+                dataGridViewMovieShows_Search.Rows.Add(movie.Film, movie.Cinema, movie.Genre, movie.Date, movie.Day, movie.Start, movie.End, movie.Duration);
+            }
+            else
+            {
+                MessageBox.Show("No film found with the specified name and date.");
             }
         }
         //
@@ -621,7 +655,11 @@ namespace MovieShows_Coursework
                 dateTimePickerDateShow_Search.Enabled = true;
             }
             else
+            {
+                labelAmount.Text = "";
+                labelAverage.Text = "";
                 dateTimePickerDateShow_Search.Enabled = false;
+            }
         }
         //
         //  upcoming session [radio button]
