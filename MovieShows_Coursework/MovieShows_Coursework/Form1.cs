@@ -21,6 +21,7 @@ namespace MovieShows_Coursework
 {
     public partial class FormJOMovie : Form
     {
+        // PeREMOGA
         private string xmlFilePath = "C:\\Users\\sjdro\\source\\repos\\MovieShows_Coursework\\MovieShows_Coursework\\MovieShows_Coursework\\AllMovies.xml";
 
         List<Billboard> billboard = new List<Billboard>();
