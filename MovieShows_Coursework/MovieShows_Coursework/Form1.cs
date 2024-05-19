@@ -432,34 +432,6 @@ namespace MovieShows_Coursework
             }
         }
         //
-        // binary search [algorithm]
-        //
-        private int BinarySearch(List<Billboard> billboard, string title, string date)
-        {
-            int low = 0;
-            int hight = billboard.Count - 1;
-            while (low <= hight)
-            {
-                int mid = low + (hight - low) / 2;
-                int dateCompare = string.Compare(billboard[mid].Date, date);
-                int cimenmaCompare = string.Compare(billboard[mid].Cinema, title);
-
-                if (dateCompare == 0 && cimenmaCompare == 0)
-                {
-                    return mid;
-                }
-                if (dateCompare < 0 || (dateCompare == 0 && cimenmaCompare < 0))
-                {
-                    low = mid + 1;
-                }
-                else
-                {
-                    hight = mid - 1;
-                }
-            }
-            return -1;
-        }
-        //
         // calculate sessions and average duration [button]
         //
         private void CalculateSessionsAndAverageDuration()
@@ -508,7 +480,10 @@ namespace MovieShows_Coursework
                 } 
                 else
                 {
-                    FindFirstSession();
+                    string searchCinema = comboBoxNameCinema.Text;
+                    string searchDate = dateTimePickerDateShow_Search.Text;
+
+                    FindFirstSession(searchCinema, searchDate);
                 }
             }
             if (radioButtonAmountAndAverage.Checked == true)
@@ -521,7 +496,6 @@ namespace MovieShows_Coursework
         //
         private void DisplayAllEndSessions()
         {
-            // створення стовбців
             dataGridViewMovieShows_Search.ColumnCount = 4;
             dataGridViewMovieShows_Search.Columns[0].Name = "Film";
             dataGridViewMovieShows_Search.Columns[1].Name = "Cinema";
@@ -533,7 +507,6 @@ namespace MovieShows_Coursework
             dataGridViewMovieShows_Search.Columns[2].Width = 105;
             dataGridViewMovieShows_Search.Columns[3].Width = 65;
 
-            // очищення таблиці та додавання нових даних
             dataGridViewMovieShows_Search.Rows.Clear();
             foreach (var billboard in billboard)
             {
@@ -545,7 +518,6 @@ namespace MovieShows_Coursework
         //
         private void DisplayWeekndSessions()
         {
-            // фільтрація сеансів, що проходять у вихідні дні (субота та неділя)
             var weekendSessions = new List<Billboard>();
             foreach (var session in billboard)
             {
@@ -555,10 +527,8 @@ namespace MovieShows_Coursework
                 }
             }
 
-            // налаштування DataGridView
             SettingDataGridView();
 
-            // додавання фільтрованих даних до DataGridView
             foreach (var session in weekendSessions)
             {
                 string[] row = new string[]
@@ -579,27 +549,38 @@ namespace MovieShows_Coursework
         //
         // first sessions 
         //
-        private void FindFirstSession()
+        private void FindFirstSession(string nameCinema, string date)
         {
-            string cinemaName = comboBoxNameCinema.Text;
-            string date = dateTimePickerDateShow_Search.Text;
-
+            var firstSessions = new List<Billboard>();
             SelectionSortDate(billboard);
-            int index = BinarySearch(billboard, cinemaName, date);
+
+            foreach (var session in billboard)
+            {
+                if (session.Cinema == nameCinema && session.Date == date)
+                {
+                    firstSessions.Add(session);
+                    break;
+                }
+            }
 
             dataGridViewMovieShows_Search.Rows.Clear();
 
-            if (index != -1)
-            {
-                var movie = billboard[index];
+            SettingDataGridView();
 
-                SettingDataGridView();
-
-                dataGridViewMovieShows_Search.Rows.Add(movie.Film, movie.Cinema, movie.Genre, movie.Date, movie.Day, movie.Start, movie.End, movie.Duration);
-            }
-            else
+            foreach (var session in firstSessions)
             {
-                MessageBox.Show("No film found with the specified name and date.");
+                string[] row = new string[]
+                {
+                    session.Film,
+                    session.Cinema,
+                    session.Genre,
+                    session.Date,
+                    session.Day,
+                    session.Start,
+                    session.End,
+                    session.Duration.ToString()
+                };
+                dataGridViewMovieShows_Search.Rows.Add(row);
             }
         }
         //
