@@ -30,25 +30,25 @@
         {
             this.tabPageSearch = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.labelAverage = new System.Windows.Forms.Label();
+            this.groupBoxResult = new System.Windows.Forms.GroupBox();
+            this.labelAverageResult = new System.Windows.Forms.Label();
             this.labelAverageText = new System.Windows.Forms.Label();
-            this.labelAmount = new System.Windows.Forms.Label();
+            this.labelAmountResult = new System.Windows.Forms.Label();
             this.labelAmountText = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBoxNameCinema = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.groupBoxEnterData = new System.Windows.Forms.GroupBox();
+            this.comboBoxNameCinema_Search = new System.Windows.Forms.ComboBox();
+            this.labelDate = new System.Windows.Forms.Label();
             this.dateTimePickerDateShow_Search = new System.Windows.Forms.DateTimePicker();
             this.labelNameCinema_Search = new System.Windows.Forms.Label();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.dataGridViewMovieShows_Search = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox_Search = new System.Windows.Forms.GroupBox();
             this.buttonClear_Search = new System.Windows.Forms.Button();
             this.buttonLoadUpcomingReleases = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBoxRadio = new System.Windows.Forms.GroupBox();
             this.radioButtonUpcoming = new System.Windows.Forms.RadioButton();
             this.radioButtonFirstSessions = new System.Windows.Forms.RadioButton();
             this.radioButtonAmountAndAverage = new System.Windows.Forms.RadioButton();
@@ -66,7 +66,7 @@
             this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.End = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxButton_Home = new System.Windows.Forms.GroupBox();
             this.buttonClear_Home = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.labelEnd = new System.Windows.Forms.Label();
             this.labelDuration = new System.Windows.Forms.Label();
-            this.labelBeginning = new System.Windows.Forms.Label();
+            this.labelStart = new System.Windows.Forms.Label();
             this.labelNameCinema_Home = new System.Windows.Forms.Label();
             this.labelDate_Home = new System.Windows.Forms.Label();
             this.comboBoxGenreFilm = new System.Windows.Forms.ComboBox();
@@ -95,17 +95,17 @@
             this.checkBoxRoot = new System.Windows.Forms.CheckBox();
             this.tabPageSearch.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.groupBoxResult.SuspendLayout();
+            this.groupBoxEnterData.SuspendLayout();
             this.panelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Search)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBox_Search.SuspendLayout();
+            this.groupBoxRadio.SuspendLayout();
             this.tabPageHome.SuspendLayout();
             this.panelHome.SuspendLayout();
             this.panelDataMovieShows.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Home)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxButton_Home.SuspendLayout();
             this.groupBoxInputData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -124,11 +124,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.groupBox5);
-            this.panel1.Controls.Add(this.groupBox4);
+            this.panel1.Controls.Add(this.groupBoxResult);
+            this.panel1.Controls.Add(this.groupBoxEnterData);
             this.panel1.Controls.Add(this.panelSearch);
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox3);
+            this.panel1.Controls.Add(this.groupBox_Search);
+            this.panel1.Controls.Add(this.groupBoxRadio);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
@@ -136,26 +136,26 @@
             this.panel1.Size = new System.Drawing.Size(1301, 550);
             this.panel1.TabIndex = 1;
             // 
-            // groupBox5
+            // groupBoxResult
             // 
-            this.groupBox5.Controls.Add(this.labelAverage);
-            this.groupBox5.Controls.Add(this.labelAverageText);
-            this.groupBox5.Controls.Add(this.labelAmount);
-            this.groupBox5.Controls.Add(this.labelAmountText);
-            this.groupBox5.Controls.Add(this.textBox1);
-            this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Location = new System.Drawing.Point(13, 335);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(300, 55);
-            this.groupBox5.TabIndex = 14;
-            this.groupBox5.TabStop = false;
+            this.groupBoxResult.Controls.Add(this.labelAverageResult);
+            this.groupBoxResult.Controls.Add(this.labelAverageText);
+            this.groupBoxResult.Controls.Add(this.labelAmountResult);
+            this.groupBoxResult.Controls.Add(this.labelAmountText);
+            this.groupBoxResult.Controls.Add(this.textBox1);
+            this.groupBoxResult.Controls.Add(this.label2);
+            this.groupBoxResult.Location = new System.Drawing.Point(13, 335);
+            this.groupBoxResult.Name = "groupBoxResult";
+            this.groupBoxResult.Size = new System.Drawing.Size(300, 55);
+            this.groupBoxResult.TabIndex = 14;
+            this.groupBoxResult.TabStop = false;
             // 
-            // labelAverage
+            // labelAverageResult
             // 
-            this.labelAverage.Location = new System.Drawing.Point(234, 21);
-            this.labelAverage.Name = "labelAverage";
-            this.labelAverage.Size = new System.Drawing.Size(56, 23);
-            this.labelAverage.TabIndex = 12;
+            this.labelAverageResult.Location = new System.Drawing.Point(234, 21);
+            this.labelAverageResult.Name = "labelAverageResult";
+            this.labelAverageResult.Size = new System.Drawing.Size(56, 23);
+            this.labelAverageResult.TabIndex = 12;
             // 
             // labelAverageText
             // 
@@ -165,12 +165,12 @@
             this.labelAverageText.TabIndex = 11;
             this.labelAverageText.Text = "Average:";
             // 
-            // labelAmount
+            // labelAmountResult
             // 
-            this.labelAmount.Location = new System.Drawing.Point(95, 21);
-            this.labelAmount.Name = "labelAmount";
-            this.labelAmount.Size = new System.Drawing.Size(44, 23);
-            this.labelAmount.TabIndex = 10;
+            this.labelAmountResult.Location = new System.Drawing.Point(95, 21);
+            this.labelAmountResult.Name = "labelAmountResult";
+            this.labelAmountResult.Size = new System.Drawing.Size(44, 23);
+            this.labelAmountResult.TabIndex = 10;
             // 
             // labelAmountText
             // 
@@ -197,34 +197,34 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Name cinema:";
             // 
-            // groupBox4
+            // groupBoxEnterData
             // 
-            this.groupBox4.Controls.Add(this.comboBoxNameCinema);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.dateTimePickerDateShow_Search);
-            this.groupBox4.Controls.Add(this.labelNameCinema_Search);
-            this.groupBox4.Location = new System.Drawing.Point(13, 232);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(300, 104);
-            this.groupBox4.TabIndex = 13;
-            this.groupBox4.TabStop = false;
+            this.groupBoxEnterData.Controls.Add(this.comboBoxNameCinema_Search);
+            this.groupBoxEnterData.Controls.Add(this.labelDate);
+            this.groupBoxEnterData.Controls.Add(this.dateTimePickerDateShow_Search);
+            this.groupBoxEnterData.Controls.Add(this.labelNameCinema_Search);
+            this.groupBoxEnterData.Location = new System.Drawing.Point(13, 232);
+            this.groupBoxEnterData.Name = "groupBoxEnterData";
+            this.groupBoxEnterData.Size = new System.Drawing.Size(300, 104);
+            this.groupBoxEnterData.TabIndex = 13;
+            this.groupBoxEnterData.TabStop = false;
             // 
-            // comboBoxNameCinema
+            // comboBoxNameCinema_Search
             // 
-            this.comboBoxNameCinema.Enabled = false;
-            this.comboBoxNameCinema.FormattingEnabled = true;
-            this.comboBoxNameCinema.Location = new System.Drawing.Point(145, 60);
-            this.comboBoxNameCinema.Name = "comboBoxNameCinema";
-            this.comboBoxNameCinema.Size = new System.Drawing.Size(145, 33);
-            this.comboBoxNameCinema.TabIndex = 9;
+            this.comboBoxNameCinema_Search.Enabled = false;
+            this.comboBoxNameCinema_Search.FormattingEnabled = true;
+            this.comboBoxNameCinema_Search.Location = new System.Drawing.Point(145, 60);
+            this.comboBoxNameCinema_Search.Name = "comboBoxNameCinema_Search";
+            this.comboBoxNameCinema_Search.Size = new System.Drawing.Size(145, 33);
+            this.comboBoxNameCinema_Search.TabIndex = 9;
             // 
-            // label4
+            // labelDate
             // 
-            this.label4.Location = new System.Drawing.Point(6, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 23);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Date:";
+            this.labelDate.Location = new System.Drawing.Point(6, 29);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(55, 23);
+            this.labelDate.TabIndex = 8;
+            this.labelDate.Text = "Date:";
             // 
             // dateTimePickerDateShow_Search
             // 
@@ -265,16 +265,16 @@
             this.dataGridViewMovieShows_Search.Size = new System.Drawing.Size(969, 522);
             this.dataGridViewMovieShows_Search.TabIndex = 1;
             // 
-            // groupBox2
+            // groupBox_Search
             // 
-            this.groupBox2.Controls.Add(this.buttonClear_Search);
-            this.groupBox2.Controls.Add(this.buttonLoadUpcomingReleases);
-            this.groupBox2.Controls.Add(this.buttonSearch);
-            this.groupBox2.Location = new System.Drawing.Point(13, 387);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(300, 151);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
+            this.groupBox_Search.Controls.Add(this.buttonClear_Search);
+            this.groupBox_Search.Controls.Add(this.buttonLoadUpcomingReleases);
+            this.groupBox_Search.Controls.Add(this.buttonSearch);
+            this.groupBox_Search.Location = new System.Drawing.Point(13, 387);
+            this.groupBox_Search.Name = "groupBox_Search";
+            this.groupBox_Search.Size = new System.Drawing.Size(300, 151);
+            this.groupBox_Search.TabIndex = 12;
+            this.groupBox_Search.TabStop = false;
             // 
             // buttonClear_Search
             // 
@@ -307,18 +307,18 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // groupBox3
+            // groupBoxRadio
             // 
-            this.groupBox3.Controls.Add(this.radioButtonUpcoming);
-            this.groupBox3.Controls.Add(this.radioButtonFirstSessions);
-            this.groupBox3.Controls.Add(this.radioButtonAmountAndAverage);
-            this.groupBox3.Controls.Add(this.radioButtonSessionsWeeknd);
-            this.groupBox3.Controls.Add(this.radioButtonEndSessions);
-            this.groupBox3.Location = new System.Drawing.Point(13, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(300, 230);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
+            this.groupBoxRadio.Controls.Add(this.radioButtonUpcoming);
+            this.groupBoxRadio.Controls.Add(this.radioButtonFirstSessions);
+            this.groupBoxRadio.Controls.Add(this.radioButtonAmountAndAverage);
+            this.groupBoxRadio.Controls.Add(this.radioButtonSessionsWeeknd);
+            this.groupBoxRadio.Controls.Add(this.radioButtonEndSessions);
+            this.groupBoxRadio.Location = new System.Drawing.Point(13, 3);
+            this.groupBoxRadio.Name = "groupBoxRadio";
+            this.groupBoxRadio.Size = new System.Drawing.Size(300, 230);
+            this.groupBoxRadio.TabIndex = 9;
+            this.groupBoxRadio.TabStop = false;
             // 
             // radioButtonUpcoming
             // 
@@ -394,7 +394,7 @@
             // panelHome
             // 
             this.panelHome.Controls.Add(this.panelDataMovieShows);
-            this.panelHome.Controls.Add(this.groupBox1);
+            this.panelHome.Controls.Add(this.groupBoxButton_Home);
             this.panelHome.Controls.Add(this.groupBoxInputData);
             this.panelHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHome.Location = new System.Drawing.Point(0, 0);
@@ -487,19 +487,19 @@
             this.Duration.Name = "Duration";
             this.Duration.Width = 111;
             // 
-            // groupBox1
+            // groupBoxButton_Home
             // 
-            this.groupBox1.Controls.Add(this.buttonClear_Home);
-            this.groupBox1.Controls.Add(this.buttonLoad);
-            this.groupBox1.Controls.Add(this.buttonSave);
-            this.groupBox1.Controls.Add(this.buttonDelete);
-            this.groupBox1.Controls.Add(this.buttonEdit);
-            this.groupBox1.Controls.Add(this.buttonAdd);
-            this.groupBox1.Location = new System.Drawing.Point(13, 268);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(300, 270);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
+            this.groupBoxButton_Home.Controls.Add(this.buttonClear_Home);
+            this.groupBoxButton_Home.Controls.Add(this.buttonLoad);
+            this.groupBoxButton_Home.Controls.Add(this.buttonSave);
+            this.groupBoxButton_Home.Controls.Add(this.buttonDelete);
+            this.groupBoxButton_Home.Controls.Add(this.buttonEdit);
+            this.groupBoxButton_Home.Controls.Add(this.buttonAdd);
+            this.groupBoxButton_Home.Location = new System.Drawing.Point(13, 268);
+            this.groupBoxButton_Home.Name = "groupBoxButton_Home";
+            this.groupBoxButton_Home.Size = new System.Drawing.Size(300, 270);
+            this.groupBoxButton_Home.TabIndex = 12;
+            this.groupBoxButton_Home.TabStop = false;
             // 
             // buttonClear_Home
             // 
@@ -574,7 +574,7 @@
             this.groupBoxInputData.Controls.Add(this.dateTimePickerStart);
             this.groupBoxInputData.Controls.Add(this.labelEnd);
             this.groupBoxInputData.Controls.Add(this.labelDuration);
-            this.groupBoxInputData.Controls.Add(this.labelBeginning);
+            this.groupBoxInputData.Controls.Add(this.labelStart);
             this.groupBoxInputData.Controls.Add(this.labelNameCinema_Home);
             this.groupBoxInputData.Controls.Add(this.labelDate_Home);
             this.groupBoxInputData.Controls.Add(this.comboBoxGenreFilm);
@@ -657,13 +657,13 @@
             this.labelDuration.TabIndex = 11;
             this.labelDuration.Text = "Duration (min):";
             // 
-            // labelBeginning
+            // labelStart
             // 
-            this.labelBeginning.Location = new System.Drawing.Point(6, 189);
-            this.labelBeginning.Name = "labelBeginning";
-            this.labelBeginning.Size = new System.Drawing.Size(104, 28);
-            this.labelBeginning.TabIndex = 10;
-            this.labelBeginning.Text = "Start:";
+            this.labelStart.Location = new System.Drawing.Point(6, 189);
+            this.labelStart.Name = "labelStart";
+            this.labelStart.Size = new System.Drawing.Size(104, 28);
+            this.labelStart.TabIndex = 10;
+            this.labelStart.Text = "Start:";
             // 
             // labelNameCinema_Home
             // 
@@ -792,19 +792,19 @@
             this.Load += new System.EventHandler(this.FormJOMovie_Load);
             this.tabPageSearch.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
+            this.groupBoxResult.ResumeLayout(false);
+            this.groupBoxResult.PerformLayout();
+            this.groupBoxEnterData.ResumeLayout(false);
             this.panelSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Search)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBox_Search.ResumeLayout(false);
+            this.groupBoxRadio.ResumeLayout(false);
+            this.groupBoxRadio.PerformLayout();
             this.tabPageHome.ResumeLayout(false);
             this.panelHome.ResumeLayout(false);
             this.panelDataMovieShows.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Home)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.groupBoxButton_Home.ResumeLayout(false);
             this.groupBoxInputData.ResumeLayout(false);
             this.groupBoxInputData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
@@ -819,15 +819,15 @@
         private System.Windows.Forms.TabPage tabPageSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelSearch;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox_Search;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBoxRadio;
         private System.Windows.Forms.RadioButton radioButtonEndSessions;
         private System.Windows.Forms.TabPage tabPageHome;
         private System.Windows.Forms.Panel panelHome;
         private System.Windows.Forms.Panel panelDataMovieShows;
         private System.Windows.Forms.DataGridView dataGridViewMovieShows_Home;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxButton_Home;
         private System.Windows.Forms.Button buttonClear_Home;
         private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.Button buttonSave;
@@ -836,7 +836,7 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.GroupBox groupBoxInputData;
         private System.Windows.Forms.Label labelDuration;
-        private System.Windows.Forms.Label labelBeginning;
+        private System.Windows.Forms.Label labelStart;
         private System.Windows.Forms.Label labelNameCinema_Home;
         private System.Windows.Forms.Label labelDate_Home;
         private System.Windows.Forms.ComboBox comboBoxGenreFilm;
@@ -851,10 +851,10 @@
         private System.Windows.Forms.RadioButton radioButtonFirstSessions;
         private System.Windows.Forms.RadioButton radioButtonUpcoming;
         private System.Windows.Forms.Button buttonLoadUpcomingReleases;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label labelAverage;
+        private System.Windows.Forms.GroupBox groupBoxResult;
+        private System.Windows.Forms.Label labelAverageResult;
         private System.Windows.Forms.Label labelAverageText;
-        private System.Windows.Forms.Label labelAmount;
+        private System.Windows.Forms.Label labelAmountResult;
         private System.Windows.Forms.Label labelAmountText;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
@@ -875,9 +875,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Start;
         private System.Windows.Forms.DataGridViewTextBoxColumn End;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBoxNameCinema;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBoxEnterData;
+        private System.Windows.Forms.ComboBox comboBoxNameCinema_Search;
+        private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerDateShow_Search;
         private System.Windows.Forms.Label labelNameCinema_Search;
         private System.Windows.Forms.ComboBox comboBoxNameCinema_Home;

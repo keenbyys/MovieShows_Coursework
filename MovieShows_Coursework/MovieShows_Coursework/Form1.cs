@@ -35,9 +35,9 @@ namespace MovieShows_Coursework
 
         private void FormJOMovie_Load(object sender, EventArgs e)
         {
-            comboBoxNameCinema.Items.Add("EvilLight");
-            comboBoxNameCinema.Items.Add("RestlessDreams");
-            comboBoxNameCinema.Items.Add("VibeJo");
+            comboBoxNameCinema_Search.Items.Add("EvilLight");
+            comboBoxNameCinema_Search.Items.Add("RestlessDreams");
+            comboBoxNameCinema_Search.Items.Add("VibeJo");
 
             comboBoxGenreFilm.Items.Add("Action");
             comboBoxGenreFilm.Items.Add("Comedy");
@@ -92,6 +92,7 @@ namespace MovieShows_Coursework
         {
             XmlDocument xmlDocAllMovies = new XmlDocument();
 
+            // Зчитування данних з XML-файлу
             xmlDocAllMovies.Load(xmlFilePath);
 
             XmlNodeList itemNodes = xmlDocAllMovies.SelectNodes("//Billboard");
@@ -415,7 +416,7 @@ namespace MovieShows_Coursework
         //
         // selection sort [algorithm]
         //
-        private void SelectionSortDate(List<Billboard> billboards)
+        private void SelectionSortStart(List<Billboard> billboards)
         {
             for (int i = 0; i < billboards.Count - 1; i++)
             {
@@ -427,10 +428,14 @@ namespace MovieShows_Coursework
                         minValue = j;
                     }
                 }
-                var tempValue = billboards[i];
-                billboards[i] = billboards[minValue];
-                billboards[minValue] = tempValue;
+                Swap(billboards, i, minValue);
             }
+        }
+        private void Swap(List<Billboard> billboards, int i, int min)
+        {
+            var tempValue = billboards[i];
+            billboards[i] = billboards[min];
+            billboards[min] = tempValue;
         }
         //
         // calculate sessions and average duration [button]
@@ -447,13 +452,13 @@ namespace MovieShows_Coursework
                 int count = filmsOnDate.Count;
                 double averageDuration = count > 0 ? (double)totalDuration / count : 0;
 
-                labelAmount.Text = $"{count}";
-                labelAverage.Text = $"{averageDuration}";
+                labelAmountResult.Text = $"{count}";
+                labelAverageResult.Text = $"{averageDuration}";
             }
             else
             {
-                labelAmount.Text = "—";
-                labelAverage.Text = "—";
+                labelAmountResult.Text = "—";
+                labelAverageResult.Text = "—";
             }
         }
         //
@@ -464,24 +469,24 @@ namespace MovieShows_Coursework
             
             if (radioButtonEndSessions.Checked == true)
             {
-                SelectionSortDate(billboard);
+                SelectionSortStart(billboard);
                 DisplayAllEndSessions();
             }
             if (radioButtonSessionsWeeknd.Checked == true)
             {
-                SelectionSortDate(billboard);
+                SelectionSortStart(billboard);
                 DisplayWeekndSessions();
             }
             if (radioButtonFirstSessions.Checked == true)
             {
-                SelectionSortDate(billboard);
-                if (comboBoxNameCinema.Text == "")
+                SelectionSortStart(billboard);
+                if (comboBoxNameCinema_Search.Text == "")
                 {
                     MessageBox.Show("Error!");
                 } 
                 else
                 {
-                    string searchCinema = comboBoxNameCinema.Text;
+                    string searchCinema = comboBoxNameCinema_Search.Text;
                     string searchDate = dateTimePickerDateShow_Search.Text;
 
                     FindFirstSession(searchCinema, searchDate);
@@ -553,7 +558,7 @@ namespace MovieShows_Coursework
         private void FindFirstSession(string nameCinema, string date)
         {
             var firstSessions = new List<Billboard>();
-            SelectionSortDate(billboard);
+            SelectionSortStart(billboard);
 
             foreach (var session in billboard)
             {
@@ -642,8 +647,8 @@ namespace MovieShows_Coursework
             }
             else
             {
-                labelAmount.Text = "";
-                labelAverage.Text = "";
+                labelAmountResult.Text = "";
+                labelAverageResult.Text = "";
                 dateTimePickerDateShow_Search.Enabled = false;
             }
         }
@@ -687,12 +692,12 @@ namespace MovieShows_Coursework
                 dataGridViewMovieShows_Search.Columns.Clear();
                 dataGridViewMovieShows_Search.Rows.Clear();
                 dateTimePickerDateShow_Search.Enabled = true;
-                comboBoxNameCinema.Enabled = true;
+                comboBoxNameCinema_Search.Enabled = true;
             } 
             else
             {
                 dateTimePickerDateShow_Search.Enabled = false;
-                comboBoxNameCinema.Enabled = false;
+                comboBoxNameCinema_Search.Enabled = false;
             }
         }
         // <SEARCH>
