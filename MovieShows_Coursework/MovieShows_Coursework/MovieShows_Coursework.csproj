@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AllMovies.xml" />
+    <None Include="img\81207742f09eeecfe8babec30deb6512.png" />
+    <None Include="img\Daco_5768635.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

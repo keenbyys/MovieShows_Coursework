@@ -92,7 +92,6 @@ namespace MovieShows_Coursework
         {
             XmlDocument xmlDocAllMovies = new XmlDocument();
 
-            // Зчитування данних з XML-файлу
             xmlDocAllMovies.Load(xmlFilePath);
 
             XmlNodeList itemNodes = xmlDocAllMovies.SelectNodes("//Billboard");
@@ -123,7 +122,7 @@ namespace MovieShows_Coursework
             if (textBoxNameFilm.Text == "" || comboBoxNameCinema_Home.Text == "" || comboBoxGenreFilm.Text == ""
                 || dateTimePickerStart.Text == "00:00" || dateTimePickerEnd.Text == "00:00" || numericUpDownDuration.Value == 0)
             {
-                MessageBox.Show("Error!");
+                MessageBox.Show("Fill in all the fields!");
             }
             else
             {
@@ -174,7 +173,7 @@ namespace MovieShows_Coursework
                     row.Cells[6].Value.ToString() == end && 
                     Convert.ToInt32(row.Cells[7].Value)== duration)
                 {
-                    return true; // Found duplicate
+                    return true;
                 }
             }
             return false;
@@ -198,7 +197,7 @@ namespace MovieShows_Coursework
             }
             else
             {
-                MessageBox.Show("Error!");
+                MessageBox.Show("Error!\nTry again!");
             }
         }
         //
@@ -212,7 +211,7 @@ namespace MovieShows_Coursework
             }
             else
             {
-                MessageBox.Show("Error!");
+                MessageBox.Show("Error!\nTry again!");
             }
         }
 
@@ -423,7 +422,7 @@ namespace MovieShows_Coursework
                 int minValue = i;
                 for (int j = i + 1; j < billboards.Count; j++)
                 {
-                    if (string.Compare(billboards[j].Start, billboards[minValue].Start) < 0)
+                    if (CompareSessions(billboards[j], billboards[minValue]) < 0)
                     {
                         minValue = j;
                     }
@@ -436,6 +435,45 @@ namespace MovieShows_Coursework
             var tempValue = billboards[i];
             billboards[i] = billboards[min];
             billboards[min] = tempValue;
+        }
+
+        private int CompareSessions(Billboard a, Billboard b)
+        {
+            int dateComparison = a.Date.CompareTo(b.Date);
+            if (dateComparison != 0) return dateComparison;
+
+            int cinemaComparison = a.Cinema.CompareTo(b.Cinema);
+            if (cinemaComparison != 0) return cinemaComparison;
+
+            return a.Start.CompareTo(b.Start);
+        }
+        //
+        // binary search [algorythm]
+        //
+        private int BinarySearch(List<Billboard> sessions, string targetDate, string targetCinema)
+        {
+            int low = 0;
+            int high = sessions.Count - 1;
+
+            while (low <= high)
+            {
+                int mid = (low + high) / 2;
+                if (sessions[mid].Date.CompareTo(targetDate) < 0 ||
+                    (sessions[mid].Date == targetDate && sessions[mid].Cinema.CompareTo(targetCinema) < 0))
+                {
+                    low = mid + 1;
+                }
+                else
+                {
+                    high = mid - 1;
+                }
+            }
+            if (low < sessions.Count && sessions[low].Date == targetDate && sessions[low].Cinema == targetCinema)
+            {
+                return low;
+            }
+
+            return -1;
         }
         //
         // calculate sessions and average duration [button]
@@ -457,8 +495,7 @@ namespace MovieShows_Coursework
             }
             else
             {
-                labelAmountResult.Text = "—";
-                labelAverageResult.Text = "—";
+                MessageBox.Show("There're no session on this day!");
             }
         }
         //
@@ -479,10 +516,10 @@ namespace MovieShows_Coursework
             }
             if (radioButtonFirstSessions.Checked == true)
             {
-                SelectionSortStart(billboard);
+                //SelectionSortStart(billboard);
                 if (comboBoxNameCinema_Search.Text == "")
                 {
-                    MessageBox.Show("Error!");
+                    MessageBox.Show("Enter name of cinema!");
                 } 
                 else
                 {
@@ -555,38 +592,28 @@ namespace MovieShows_Coursework
         //
         // first sessions 
         //
-        private void FindFirstSession(string nameCinema, string date)
+        private void FindFirstSession(string cinemaName, string targetDate)
         {
-            var firstSessions = new List<Billboard>();
             SelectionSortStart(billboard);
+            
+            // Виклик бінарного пошуку
+            int index = BinarySearch(billboard, targetDate, cinemaName);
 
-            foreach (var session in billboard)
-            {
-                if (session.Cinema == nameCinema && session.Date == date)
-                {
-                    firstSessions.Add(session);
-                    break;
-                }
+            // Перевірка наявності сеансів для вказаної дати та кінотеатру
+            if (index != -1)
+            { 
+                Billboard firstSession = billboard[index];
+
+                // Додаємо дані у DataGridView
+                dataGridViewMovieShows_Search.Rows.Clear();
+
+                SettingDataGridView();
+
+                dataGridViewMovieShows_Search.Rows.Add(firstSession.Film, firstSession.Cinema, firstSession.Genre, firstSession.Date, firstSession.Day, firstSession.Start, firstSession.End, firstSession.Duration);
             }
-
-            dataGridViewMovieShows_Search.Rows.Clear();
-
-            SettingDataGridView();
-
-            foreach (var session in firstSessions)
+            else
             {
-                string[] row = new string[]
-                {
-                    session.Film,
-                    session.Cinema,
-                    session.Genre,
-                    session.Date,
-                    session.Day,
-                    session.Start,
-                    session.End,
-                    session.Duration.ToString()
-                };
-                dataGridViewMovieShows_Search.Rows.Add(row);
+                MessageBox.Show("There're no session on this day!");
             }
         }
         //
@@ -606,7 +633,7 @@ namespace MovieShows_Coursework
 
             dataGridViewMovieShows_Search.Columns[0].Width = 250;
             dataGridViewMovieShows_Search.Columns[1].Width = 150;
-            dataGridViewMovieShows_Search.Columns[2].Width = 75;
+            dataGridViewMovieShows_Search.Columns[2].Width = 85;
             dataGridViewMovieShows_Search.Columns[3].Width = 105;
             dataGridViewMovieShows_Search.Columns[4].Width = 95;
             dataGridViewMovieShows_Search.Columns[5].Width = 70;
@@ -662,9 +689,13 @@ namespace MovieShows_Coursework
                 dataGridViewMovieShows_Search.Columns.Clear();
                 dataGridViewMovieShows_Search.Rows.Clear();
                 buttonLoadUpcomingReleases.Enabled = true;
+                buttonSearch.Enabled = false;
             }
             else
+            {
                 buttonLoadUpcomingReleases.Enabled = false;
+                buttonSearch.Enabled = true;
+            }
         }
 
         private void radioButtonEndSessions_CheckedChanged(object sender, EventArgs e)

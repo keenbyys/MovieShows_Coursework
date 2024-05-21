@@ -93,6 +93,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.buttonExit = new System.Windows.Forms.Button();
             this.checkBoxRoot = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPageSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBoxResult.SuspendLayout();
@@ -109,6 +111,8 @@
             this.groupBoxInputData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPageSearch
@@ -309,6 +313,7 @@
             // 
             // groupBoxRadio
             // 
+            this.groupBoxRadio.Controls.Add(this.pictureBox2);
             this.groupBoxRadio.Controls.Add(this.radioButtonUpcoming);
             this.groupBoxRadio.Controls.Add(this.radioButtonFirstSessions);
             this.groupBoxRadio.Controls.Add(this.radioButtonAmountAndAverage);
@@ -774,12 +779,33 @@
             this.checkBoxRoot.UseVisualStyleBackColor = true;
             this.checkBoxRoot.CheckedChanged += new System.EventHandler(this.checkBoxRoot_CheckedChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MovieShows_Coursework.Properties.Resources.Daco_5768635;
+            this.pictureBox1.Location = new System.Drawing.Point(931, -6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MovieShows_Coursework.Properties.Resources._81207742f09eeecfe8babec30deb6512;
+            this.pictureBox2.Location = new System.Drawing.Point(206, 150);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(89, 78);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormJOMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1337, 618);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBoxRoot);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.tabControl1);
@@ -809,6 +835,8 @@
             this.groupBoxInputData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -881,6 +909,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerDateShow_Search;
         private System.Windows.Forms.Label labelNameCinema_Search;
         private System.Windows.Forms.ComboBox comboBoxNameCinema_Home;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
