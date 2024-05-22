@@ -21,7 +21,6 @@ namespace MovieShows_Coursework
 {
     public partial class FormJOMovie : Form
     {
-        // PeREMOGA
         private string xmlFilePath = "C:\\Users\\sjdro\\source\\repos\\MovieShows_Coursework\\MovieShows_Coursework\\MovieShows_Coursework\\AllMovies.xml";
 
         List<Billboard> billboard = new List<Billboard>();
@@ -596,15 +595,12 @@ namespace MovieShows_Coursework
         {
             SelectionSortStart(billboard);
             
-            // Виклик бінарного пошуку
             int index = BinarySearch(billboard, targetDate, cinemaName);
 
-            // Перевірка наявності сеансів для вказаної дати та кінотеатру
             if (index != -1)
             { 
                 Billboard firstSession = billboard[index];
 
-                // Додаємо дані у DataGridView
                 dataGridViewMovieShows_Search.Rows.Clear();
 
                 SettingDataGridView();
