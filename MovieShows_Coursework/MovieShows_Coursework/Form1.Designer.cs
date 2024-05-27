@@ -49,6 +49,7 @@
             this.buttonLoadUpcomingReleases = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.groupBoxRadio = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.radioButtonUpcoming = new System.Windows.Forms.RadioButton();
             this.radioButtonFirstSessions = new System.Windows.Forms.RadioButton();
             this.radioButtonAmountAndAverage = new System.Windows.Forms.RadioButton();
@@ -94,7 +95,6 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.checkBoxRoot = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPageSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBoxResult.SuspendLayout();
@@ -103,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovieShows_Search)).BeginInit();
             this.groupBox_Search.SuspendLayout();
             this.groupBoxRadio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPageHome.SuspendLayout();
             this.panelHome.SuspendLayout();
             this.panelDataMovieShows.SuspendLayout();
@@ -112,7 +113,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPageSearch
@@ -215,6 +215,7 @@
             // 
             // comboBoxNameCinema_Search
             // 
+            this.comboBoxNameCinema_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNameCinema_Search.Enabled = false;
             this.comboBoxNameCinema_Search.FormattingEnabled = true;
             this.comboBoxNameCinema_Search.Location = new System.Drawing.Point(145, 60);
@@ -324,6 +325,16 @@
             this.groupBoxRadio.Size = new System.Drawing.Size(300, 230);
             this.groupBoxRadio.TabIndex = 9;
             this.groupBoxRadio.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MovieShows_Coursework.Properties.Resources._81207742f09eeecfe8babec30deb6512;
+            this.pictureBox2.Location = new System.Drawing.Point(206, 150);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(89, 78);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
             // 
             // radioButtonUpcoming
             // 
@@ -596,6 +607,7 @@
             // 
             // comboBoxNameCinema_Home
             // 
+            this.comboBoxNameCinema_Home.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNameCinema_Home.Enabled = false;
             this.comboBoxNameCinema_Home.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxNameCinema_Home.FormattingEnabled = true;
@@ -606,6 +618,7 @@
             // 
             // comboBoxDayOfWeeknd
             // 
+            this.comboBoxDayOfWeeknd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDayOfWeeknd.Enabled = false;
             this.comboBoxDayOfWeeknd.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxDayOfWeeknd.FormattingEnabled = true;
@@ -688,6 +701,7 @@
             // 
             // comboBoxGenreFilm
             // 
+            this.comboBoxGenreFilm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenreFilm.Enabled = false;
             this.comboBoxGenreFilm.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxGenreFilm.FormattingEnabled = true;
@@ -710,7 +724,7 @@
             this.numericUpDownDuration.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numericUpDownDuration.Location = new System.Drawing.Point(155, 227);
             this.numericUpDownDuration.Maximum = new decimal(new int[] {
-            500,
+            250,
             0,
             0,
             0});
@@ -735,6 +749,7 @@
             this.dateTimePickerDateShow_Home.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDateShow_Home.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTimePickerDateShow_Home.Location = new System.Drawing.Point(129, 116);
+            this.dateTimePickerDateShow_Home.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerDateShow_Home.Name = "dateTimePickerDateShow_Home";
             this.dateTimePickerDateShow_Home.Size = new System.Drawing.Size(161, 29);
             this.dateTimePickerDateShow_Home.TabIndex = 5;
@@ -789,16 +804,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MovieShows_Coursework.Properties.Resources._81207742f09eeecfe8babec30deb6512;
-            this.pictureBox2.Location = new System.Drawing.Point(206, 150);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(89, 78);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            // 
             // FormJOMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -826,6 +831,7 @@
             this.groupBox_Search.ResumeLayout(false);
             this.groupBoxRadio.ResumeLayout(false);
             this.groupBoxRadio.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPageHome.ResumeLayout(false);
             this.panelHome.ResumeLayout(false);
             this.panelDataMovieShows.ResumeLayout(false);
@@ -836,7 +842,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
